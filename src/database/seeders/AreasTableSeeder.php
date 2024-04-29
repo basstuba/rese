@@ -14,6 +14,13 @@ class AreasTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $param = ['search_area' => '東京都'];
+        DB::table('areas')->insert($param);
+
+        $param = ['search_area' => '大阪府'];
+        DB::table('areas')->insert($param);
+
+        $param = ['search_area' => '福岡県'];
+        DB::table('areas')->insert($param);
     }
 }
