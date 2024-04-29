@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ShopController::class, 'index'])->name('index');
+Route::get('/search', [ShopController::class, 'search']);
+Route::get('/detail/{$shop}', [ShopController::class, 'detail'])->name('detail');/*変数shopは店舗のID*/
+Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('linkRegister');
+Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
+Route::get('/thanks', [ShopController::class, 'thanks']);
+/*ここからバリデーションかけるルート*/
+Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
+Route::post('/reservation', [ReseController::class, 'create']);
+Route::post('/reservation/delete', [ReseController::class, 'delete']);
+Route::post('/favorite', [LikeController::class, 'likeCreate']);
+Route::post('/favorite/delete', [LikeController::class, 'likeDelete']);

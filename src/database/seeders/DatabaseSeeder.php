@@ -17,9 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         // Reservation::factory(10)->create();
-        $this->call(AreasTableSeeder::class);
-        $this->call(GenresTableSeeder::class);$this->call(NumbersTableSeeder::class);
-        $this->call(ShopsTableSeeder::class);
-        $this->call(TimesTableSeeder::class);
+        //$this->call(AreasTableSeeder::class);
+        //$this->call(GenresTableSeeder::class);
+        //$this->call(NumbersTableSeeder::class);
+        //$this->call(ShopsTableSeeder::class);
+        //$this->call(TimesTableSeeder::class);
     }
 }
