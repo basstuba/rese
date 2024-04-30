@@ -2,7 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/done.css') }}"/>
-<link rel="stylesheet" href="{{ asset('css/after-login.css) }}"/>
+<link rel="stylesheet" href="{{ asset('css/after-login.css') }}"/>
 @endsection
 
 @section('modal')

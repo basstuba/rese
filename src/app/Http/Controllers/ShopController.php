@@ -16,6 +16,6 @@ class ShopController extends Controller
 {
     /*コーディング用メソッド。コーディング終了後に消去*/
     public function test() {
-        return view('done');
+        return view('thanks');
     }
 }

@@ -1,0 +1,43 @@
+.menu {
+    width: 100%;
+}
+
+.modal-back {
+    width: 20%;
+    margin: 1rem 3rem;
+}
+
+.modal-back__button {
+    display: block;
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    text-decoration: none;
+    font-size: x-large;
+    text-align: center;
+    align-content: center;
+}
+
+.menu-content {
+    width: 30%;
+    margin: 8rem auto;
+    text-align: center;
+}
+
+.menu-item {
+    margin: 1rem;
+}
+
+.menu-item__link {
+    color: #384fff;
+    font-family: "Almarai", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+
+.menu-item__link:visited {
+    color: #384fff;
+}
