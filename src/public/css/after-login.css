@@ -1,0 +1,32 @@
+.menu {
+    width: 100%;
+}
+
+.modal-back__button {
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    text-decoration: none;
+}
+
+.menu-content {
+    margin: 3rem auto;
+}
+
+.menu-item__link {
+    color: #384fff;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.menu-item__link:visited {
+    color: #384fff;
+}
+
+.logout-button {
+    color: #384fff;
+    font-size: x-large;
+}

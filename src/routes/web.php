@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ReseController;
+use App\Http\Controllers\LikeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/search', [ShopController::class, 'search']);
-Route::get('/detail/{$shop}', [ShopController::class, 'detail'])->name('detail');/*変数shopは店舗のID*/
+Route::get('/detail', [ShopController::class, 'detail'])->name('detail');/*変数shopは店舗のID /detail/{{$shop}}*/
 Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('linkRegister');
 Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
 Route::get('/thanks', [ShopController::class, 'thanks']);
@@ -25,3 +29,6 @@ Route::post('/reservation', [ReseController::class, 'create']);
 Route::post('/reservation/delete', [ReseController::class, 'delete']);
 Route::post('/favorite', [LikeController::class, 'likeCreate']);
 Route::post('/favorite/delete', [LikeController::class, 'likeDelete']);
+
+/*コーディング用ルート。コーディング終了後消去*/
+Route::get('/test', [ShopController::class, 'test']);
