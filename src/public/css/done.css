@@ -11,7 +11,8 @@
 
 .modal:target {
     visibility: visible;
-    opacity: 2;
+    opacity: 1;
+    z-index: 2;
 }
 
 .main {

@@ -16,6 +16,22 @@ class ShopController extends Controller
 {
     /*コーディング用メソッド。コーディング終了後に消去*/
     public function test() {
-        return view('thanks');
+        return view('');
+    }
+
+    public function index() {
+        $areas = Area::all();
+        $genres = Genre::all();
+
+        if(Auth::check()) {
+            $user = Auth::user();
+            $shops = Shop::with('favorites')->all();
+
+            return view('/', compact('areas', 'genres', 'user', 'shops'));
+        }else{
+            $shops = Shop::all();
+
+            return view('/', compact('areas', 'genres', 'shops'));
+        }
     }
 }

@@ -1,0 +1,99 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.main {
+    width: 100%;
+    padding: 2rem;
+}
+
+.main-content {
+    width: 30%;
+    margin: 2rem auto;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem #979797;
+}
+
+.main-content__logo {
+    background-color: #384fff;
+    color: #fff;
+    margin: 0;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.main-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    text-align: center;
+}
+
+.form-item__input {
+    width: 80%;
+    border: none;
+    border-bottom: 0.1rem solid #808080;
+    font-size: large;
+}
+
+.form-item__input:focus-visible {
+    outline: 0;
+}
+
+.form-item__input-email {
+    width: 100%;
+    background-color: #fff;
+    color: #808080;
+}
+
+.form-item__input-email::before {
+    content: "";
+    background-image: url('../storage/image/icon_email.png');
+    background-size: cover;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+}
+
+.form-item__input-password {
+    width: 100%;
+    background-color: #fff;
+    color: #808080;
+}
+
+.form-item__input-password::before {
+    content: "";
+    background-image: url('../storage/image/icon_lock-key.png');
+    background-size: cover;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+}
+
+.form-item__error {
+    color: #ff4c4c;
+}
+
+.form-button__submit {
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.7rem;
+    border: none;
+    margin-left: 16.5rem;
+}
