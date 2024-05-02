@@ -19,7 +19,7 @@ use App\Http\Controllers\LikeController;
 
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/search', [ShopController::class, 'search']);
-Route::get('/detail/{{$shop}}', [ShopController::class, 'detail'])->name('detail');/*変数shopは店舗のID /detail/{{$shop}}*/
+Route::get('/detail/{shop}', [ShopController::class, 'detail'])->name('detail');/*変数shopは店舗のID /detail/{{$shop}}*/
 Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('linkRegister');
 Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
 Route::get('/thanks', [ShopController::class, 'thanks']);

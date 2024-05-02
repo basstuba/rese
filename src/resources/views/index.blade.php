@@ -6,6 +6,34 @@
 <link rel="stylesheet" href="{{ asset('css/after-login.css') }}"/>
 @endsection
 
+@section('search')
+<div class="header-search">
+    <form class="search-form" action="/search" method="get">
+        <div class="search-item">
+            <select class="search-select" name="area" onchange="submit()">
+                <option hidden>All area</option>
+                @foreach($areas as $area)
+                <option value="{{ $area['search_area'] }}">{{ $area['search_area'] }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="search-item">
+            <select class="search-select" name="genre" onchange="submit()">
+                <option hidden>All genre</option>
+                @foreach($genres as $genre)
+                <option value="{{ $genre['search_genre'] }}">{{ $genre['search_genre'] }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="search-text">
+            <div class="text-field"><!--虫眼鏡アイコン用-->
+                <input class="text-field__input" type="text" name="keyword" placeholder="Search ..." onchange="submit()">
+            </div>
+        </div>
+    </form>
+</div>
+@endsection
+
 @section('modal')
 <div class="modal" id="menu">
     @if(Auth::check())
@@ -16,29 +44,55 @@
 </div>
 @endsection
 
-@section('search')
-<div class="header-search">
-    <form class="search-form" action="/search" method="get">
-        <div class="search-item">
-            <select class="search-select" name="area" onchange="submit()">
-                <option value="">All area</option>
-                @foreach($areas as $area)
-                <option value="{{ $area['search_area'] }}">{{ $area['search_area'] }}</option>
-                @endforeach
-            </select>
+@section('content')
+<div class="main">
+    @foreach($shops as $shop)
+    <div class="shop">
+        <div class="shop-photo">
+            <img class="shop-img" src="{{ asset($shop['img_url']) }}" alt="店舗写真">
         </div>
-        <div class="search-item">
-            <select class="search-select" name="genre" onchange="submit()">
-                <option value="">All genre</option>
-                @foreach($genres as $genre)
-                <option value="{{ $genre['search_genre'] }}">{{ $genre['search_genre']}}</option>
-            </select>
-        </div>
-        <div class="search-text">
-            <div class="text-field"><!--虫眼鏡アイコン用-->
-                <input class="text-field__input" type="text" name="keyword" placeholder="Search ..." onchange="submit()">
+        <div class="shop-date">
+            <div class="shop-name">
+                {{ $shop['name'] }}
+            </div>
+            <div class="shop-tag">
+                <small class="shop-tag__area">
+                    {{ '#' . $shop['area'] }}
+                </small>
+                <small class="shop-tag__genre">
+                    {{ '#' . $shop['genre'] }}
+                </small>
+            </div>
+            <div class="shop-detail">
+                <div class="shop-link">
+                    <a class="shop-link__button" href="{{ route('detail', ['shop' => $shop['id']]) }}">詳しくみる</a>
+                </div>
+                <div class="favorite">
+                    @foreach($shop->favorites as $favorite)
+                        @if($favorite['user_id'] == $user['id'])
+                        <form class="favorite-form__delete" action="/favorite/delete" method="post">
+                            @method('delete')
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $favorite['id'] }}"/>
+                            <button class="form-button__red" type="submit">
+                                <img class="red-heart" src="{{ asset('storage/image/icon_heart.png') }}" alt="お気に入りボタン">
+                            </button>
+                        </form>
+                        @else
+                        <form class="favorite-form" action="/favorite" method="post">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
+                            <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
+                            <button class="form-button__gray" type="submit">
+                                <img class="gray-heart" src="{{ asset('storage/image/icon_heart.png') }}" alt="お気に入りボタン">
+                            </button>
+                        </form>
+                        @endif
+                    @endforeach
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+    @endforeach
 </div>
 @endsection

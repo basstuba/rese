@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
 use App\Models\User;
 use App\Models\Reservation;
@@ -27,11 +28,12 @@ class ShopController extends Controller
             $user = Auth::user();
             $shops = Shop::with('favorites')->all();
 
-            return view('/', compact('areas', 'genres', 'user', 'shops'));
+            return view('index', compact('areas', 'genres', 'user', 'shops'));
         }else{
+            $user['id'] = '0';
             $shops = Shop::all();
 
-            return view('/', compact('areas', 'genres', 'shops'));
+            return view('index', compact('areas', 'genres', 'user', 'shops'));
         }
     }
 }

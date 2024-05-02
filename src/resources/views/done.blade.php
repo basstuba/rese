@@ -18,7 +18,7 @@
             <p class="content-text__message">ご予約ありがとうございます</p>
         </div>
         <div class="content-button">
-            <a class="content-button__back" href="{{ route('detail') }}">戻る</a>
+            <a class="content-button__back" href="{{ route('detail', ['shop' => $shop['id']]) }}">戻る</a>
         </div>
     </div>
 </div>
