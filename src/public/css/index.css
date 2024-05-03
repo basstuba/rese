@@ -19,8 +19,8 @@
 .search-item::after {
     content: "";
     position: absolute;
-    top: 1.1rem;
-    right: 0.8rem;
+    top: 0.5rem;
+    right: 1rem;
     width: 0.5rem;
     height: 0.5rem;
     border-right: 0.2rem solid #c7c6c6;
@@ -33,8 +33,7 @@
     width: 90%;
     border: none;
     border-right: 0.1rem solid #c7c6c6;
-    padding: 1rem 0.5rem;
-    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
     appearance: none;
 }
 
@@ -61,7 +60,7 @@
 }
 
 .text-field__input {
-    width: 90%;
+    width: 95%;
     border: none;
     padding: 1rem 0.5rem;
     border-radius: 0.3rem;
@@ -69,4 +68,86 @@
 
 .text-field__input:focus-visible {
     outline: 0;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.shop {
+    width: 23%;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+    background-color: #fff;
+    margin: 1rem 0.5rem;
+}
+
+.shop-photo {
+    width: 100%;
+    height: 55%;
+}
+
+.shop-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.shop-date {
+    padding: 1rem;
+}
+
+.shop-name {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.shop-detail {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-link__button {
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.favorite {
+    width: 30%;
+}
+
+.form-button {
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: right;
+}
+
+.heart {
+    width: 50%;
 }

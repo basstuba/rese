@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
 }
 
 .modal-link {
@@ -65,5 +65,5 @@
 
 .search-frame {
     width: 40%;
-    margin-right: 3rem;
+    margin-right: 2.5rem;
 }

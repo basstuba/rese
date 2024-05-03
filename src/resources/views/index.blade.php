@@ -26,7 +26,7 @@
             </select>
         </div>
         <div class="search-text">
-            <div class="text-field"><!--虫眼鏡アイコン用-->
+            <div class="text-field">
                 <input class="text-field__input" type="text" name="keyword" placeholder="Search ..." onchange="submit()">
             </div>
         </div>
@@ -68,27 +68,38 @@
                     <a class="shop-link__button" href="{{ route('detail', ['shop' => $shop['id']]) }}">詳しくみる</a>
                 </div>
                 <div class="favorite">
-                    @foreach($shop->favorites as $favorite)
-                        @if($favorite['user_id'] == $user['id'])
-                        <form class="favorite-form__delete" action="/favorite/delete" method="post">
-                            @method('delete')
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $favorite['id'] }}"/>
-                            <button class="form-button__red" type="submit">
-                                <img class="red-heart" src="{{ asset('storage/image/icon_heart.png') }}" alt="お気に入りボタン">
-                            </button>
-                        </form>
-                        @else
+                    @if($favorites->isEmpty())
                         <form class="favorite-form" action="/favorite" method="post">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
                             <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
-                            <button class="form-button__gray" type="submit">
-                                <img class="gray-heart" src="{{ asset('storage/image/icon_heart.png') }}" alt="お気に入りボタン">
+                            <button class="form-button" type="submit">
+                                <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
                             </button>
                         </form>
-                        @endif
-                    @endforeach
+                    @else
+                        @foreach($favorites as $favorite)
+                            @if($favorite['shop_id'] == $shop['id'])
+                                <form class="favorite-form__delete" action="/favorite/delete" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $favorite['id'] }}"/>
+                                    <button class="form-button" type="submit">
+                                        <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
+                                    </button>
+                                </form>
+                            @else
+                                <form class="favorite-form" action="/favorite" method="post">
+                                    @csrf
+                                    <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
+                                    <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
+                                    <button class="form-button" type="submit">
+                                        <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
+                                    </button>
+                                </form>
+                            @endif
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

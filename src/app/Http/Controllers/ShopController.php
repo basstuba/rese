@@ -23,17 +23,23 @@ class ShopController extends Controller
     public function index() {
         $areas = Area::all();
         $genres = Genre::all();
+        $shops = Shop::all();
 
         if(Auth::check()) {
             $user = Auth::user();
-            $shops = Shop::with('favorites')->all();
-
-            return view('index', compact('areas', 'genres', 'user', 'shops'));
         }else{
             $user['id'] = '0';
-            $shops = Shop::all();
-
-            return view('index', compact('areas', 'genres', 'user', 'shops'));
         }
+        $favorites = Favorite::where('user_id', $user['id'])->get();
+
+        return view('index', compact('areas', 'genres', 'shops', 'user', 'favorites'));
+    }
+
+    public function detail($shopId) {
+        $store = Shop::find($shopId);
+        $times = Time::all();
+        $numbers = Number::all();
+
+        return view('shop', compact('store', 'times', 'numbers'));
     }
 }
