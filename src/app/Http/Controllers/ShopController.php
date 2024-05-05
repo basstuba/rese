@@ -36,10 +36,10 @@ class ShopController extends Controller
     }
 
     public function detail($shopId) {
-        $store = Shop::find($shopId);
+        $shop = Shop::find($shopId);
         $times = Time::all();
         $numbers = Number::all();
 
-        return view('shop', compact('store', 'times', 'numbers'));
+        return view('shop', compact('shop', 'times', 'numbers'));
     }
 }

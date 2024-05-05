@@ -35,6 +35,7 @@
     border-right: 0.1rem solid #c7c6c6;
     padding: 0.2rem 0.5rem;
     appearance: none;
+    cursor: pointer;
 }
 
 .search-select:focus-visible {
@@ -64,6 +65,7 @@
     border: none;
     padding: 1rem 0.5rem;
     border-radius: 0.3rem;
+    cursor: pointer;
 }
 
 .text-field__input:focus-visible {
