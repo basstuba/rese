@@ -1,0 +1,176 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.main {
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.user-name {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserved {
+    width: 35%;
+
+}
+
+.reserved-content {
+    width: 100%;
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.reserved-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reserved-count {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.reserved-icon {
+    width: 8%;
+    margin-right: 1rem;
+}
+
+.icon-clock {
+    width: 100%;
+}
+
+.reserved-logo {
+    font-size: larger;
+}
+
+.delete-button {
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid #fff;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #384fff;
+    font-size: x-large;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.reserved-content__table {
+    margin-top: 1rem;
+}
+
+.reserved-table {
+    width: 100%;
+}
+
+.reserved-th {
+    width: 25%;
+    text-align: left;
+    padding: 0.3rem 0;
+    font-size: larger;
+}
+
+.reserved-td {
+    font-size: larger;
+}
+
+.like {
+    width: 57%;
+}
+
+.favorite-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shop {
+    width: 45%;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+    background-color: #fff;
+    margin: 0 2rem 1rem 0;
+}
+
+.shop-photo {
+    width: 100%;
+    height: 55%;
+}
+
+.shop-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.shop-date {
+    padding: 0.5rem 1rem;
+}
+
+.shop-name {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.shop-detail {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-link__button {
+    background-color: #384fff;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.favorite {
+    width: 30%;
+}
+
+.form-button {
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: right;
+}
+
+.heart {
+    width: 50%;
+}

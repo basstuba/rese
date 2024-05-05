@@ -17,7 +17,7 @@ class ShopController extends Controller
 {
     /*コーディング用メソッド。コーディング終了後に消去*/
     public function test() {
-        return view('');
+        return view('my-page');
     }
 
     public function index() {
@@ -41,5 +41,13 @@ class ShopController extends Controller
         $numbers = Number::all();
 
         return view('shop', compact('shop', 'times', 'numbers'));
+    }
+
+    public function linkUser() {
+        $user = Auth::user();
+        $reservations = Reservation::with('shop')->where('user_id', $user['id'])->get();
+        $favorites = Favorite::with('shop')->where('user_id', $user['id'])->get();
+
+        return view('my-page', compact('user', 'reservations', 'favorites'));
     }
 }
