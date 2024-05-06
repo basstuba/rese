@@ -62,9 +62,10 @@
                     </div>
                     <div class="indicate-item">
                         <select class="indicate-item__select" name="sendTime" onchange="submit()">
-                            <option hidden>時間を選択してください</option>
+                            <option value="" hidden>時間を選択してください</option>
                             @foreach($times as $time)
-                            <option value="{{ $time['reserved_time'] }}" @if(old('sendTime') == $time) selected @endif>
+                            <option value="{{ $time['reserved_time'] }}"
+                            {{ old('sendTime') == $time['reserved_time'] ? 'selected' : ''}}>
                                 {{ $time['reserved_time'] }}
                             </option>
                             @endforeach
@@ -78,9 +79,10 @@
                     </div>
                     <div class="indicate-item">
                         <select class="indicate-item__select" name="sendNumber" onchange="submit()">
-                            <option hidden>人数を選択してください</option>
+                            <option value="" hidden>人数を選択してください</option>
                             @foreach($numbers as $number)
-                            <option value="{{ $number['reserved_number'] }}" @if(old('sendNumber') == $number) selected @endif>
+                            <option value="{{ $number['reserved_number'] }}"
+                            {{ old('sendNumber') == $number['reserved_number'] ? 'selected' : ''}}>
                                 {{ $number['reserved_number'] }}
                             </option>
                             @endforeach
@@ -92,7 +94,7 @@
                             &emsp;
                         </div>
                     </div>
-                    <input type="hidden" name="sendId" value="$shop['id']"/>
+                    <input type="hidden" name="sendId" value="{{ $shop['id'] }}"/>
                 </form>
             </div>
             <div class="reserved-form">
@@ -109,19 +111,19 @@
                             <tr class="reserved-tr">
                                 <th class="reserved-th">Date</th>
                                 <td class="reserved-td">
-                                    <input class="reserved-value" type="text" name="date" value="{{ $sendDate ?? '' }}" readonly/>
+                                    <input class="reserved-value" type="text" name="date" value="{{ old('sendDate') ?? '' }}" readonly/>
                                 </td>
                             </tr>
                             <tr class="reserved-tr">
                                 <th class="reserved-th">Time</th>
                                 <td class="reserved-td">
-                                    <input class="reserved-value" type="text" name="time" value="{{ $sendTime ?? '' }}" readonly/>
+                                    <input class="reserved-value" type="text" name="time" value="{{ old('sendTime') ?? '' }}" readonly/>
                                 </td>
                             </tr>
                             <tr class="reserved-tr">
                                 <th class="reserved-th">Number</th>
                                 <td class="reserved-td">
-                                    <input class="reserved-value" type="text" name="number" value="{{ $sendNumber ?? '' }}" readonly/>
+                                    <input class="reserved-value" type="text" name="number" value="{{ old('sendNumber') ?? '' }}" readonly/>
                                 </td>
                             </tr>
                         </table>

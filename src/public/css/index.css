@@ -12,7 +12,7 @@
 }
 
 .search-item {
-    width: 15%;
+    width: 20%;
     position: relative;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .search-select {
-    width: 90%;
+    width: 95%;
     border: none;
     border-right: 0.1rem solid #c7c6c6;
     padding: 0.2rem 0.5rem;
@@ -43,7 +43,7 @@
 }
 
 .search-text {
-    width: 70%;
+    width: 60%;
 }
 
 .text-field {
@@ -61,7 +61,7 @@
 }
 
 .text-field__input {
-    width: 95%;
+    width: 90%;
     border: none;
     padding: 1rem 0.5rem;
     border-radius: 0.3rem;

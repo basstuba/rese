@@ -11,23 +11,24 @@
     <form class="search-form" action="/search" method="get">
         <div class="search-item">
             <select class="search-select" name="area" onchange="submit()">
-                <option hidden>All area</option>
+                <option value="">All area</option>
                 @foreach($areas as $area)
-                <option value="{{ $area['search_area'] }}">{{ $area['search_area'] }}</option>
+                <option value="{{ $area['search_area'] }}" {{ old('area') == $area['search_area'] ? 'selected' : ''}}>{{ $area['search_area'] }}</option>
                 @endforeach
             </select>
         </div>
         <div class="search-item">
             <select class="search-select" name="genre" onchange="submit()">
-                <option hidden>All genre</option>
+                <option value="">All genre</option>
                 @foreach($genres as $genre)
-                <option value="{{ $genre['search_genre'] }}">{{ $genre['search_genre'] }}</option>
+                <option value="{{ $genre['search_genre'] }}" {{ old('genre') == $genre['search_genre'] ? 'selected' : ''}}>{{ $genre['search_genre'] }}</option>
                 @endforeach
             </select>
         </div>
         <div class="search-text">
             <div class="text-field">
-                <input class="text-field__input" type="text" name="keyword" placeholder="Search ..." onchange="submit()">
+                <input class="text-field__input" type="text" name="keyword" placeholder="Search ..."
+                value="{{ old('keyword') }}" onchange="submit()">
             </div>
         </div>
     </form>

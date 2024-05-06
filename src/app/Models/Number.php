@@ -9,6 +9,6 @@ class Number extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
-    protected $fillable=['reserved_number'];
+    protected $guarded = ['id'];
+    protected $fillable = ['reserved_number'];
 }

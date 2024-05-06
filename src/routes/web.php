@@ -30,6 +30,3 @@ Route::post('/reservation', [ReseController::class, 'create']);
 Route::post('/reservation/delete', [ReseController::class, 'delete']);
 Route::post('/favorite', [LikeController::class, 'likeCreate']);
 Route::post('/favorite/delete', [LikeController::class, 'likeDelete']);
-
-/*コーディング用ルート。コーディング終了後消去*/
-Route::get('/test', [ShopController::class, 'test']);

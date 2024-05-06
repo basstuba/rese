@@ -9,6 +9,6 @@ class Time extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
-    protected $fillable=['reserved_time'];
+    protected $guarded = ['id'];
+    protected $fillable = ['reserved_time'];
 }

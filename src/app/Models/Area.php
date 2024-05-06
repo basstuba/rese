@@ -9,6 +9,6 @@ class Area extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
-    protected $fillable=['search_area'];
+    protected $guarded = ['id'];
+    protected $fillable = ['search_area'];
 }

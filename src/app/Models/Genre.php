@@ -9,6 +9,6 @@ class Genre extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
-    protected $fillable=['search_genre'];
+    protected $guarded = ['id'];
+    protected $fillable = ['search_genre'];
 }
