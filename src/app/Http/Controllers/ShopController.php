@@ -12,6 +12,7 @@ use App\Models\Time;
 use App\Models\Number;
 use App\Models\Area;
 use App\Models\Genre;
+use Carbon\Carbon;
 
 class ShopController extends Controller
 {
@@ -37,8 +38,9 @@ class ShopController extends Controller
 
         $times = Time::all();
         $numbers = Number::all();
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
 
-        return view('shop', compact('shop', 'times', 'numbers'));
+        return view('shop', compact('shop', 'times', 'numbers', 'tomorrow'));
     }
 
     public function linkRegister() {

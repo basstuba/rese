@@ -52,7 +52,8 @@
             <div class="indicate">
                 <form class="indicate-form" action="/indicate" method="get">
                     <div class="indicate-date">
-                        <input class="indicate-date__input" type="date" name="sendDate" value="{{ old('sendDate') }}" onchange="submit()"/>
+                        <input class="indicate-date__input" type="date" name="sendDate"
+                        value="{{ old('sendDate') }}" min="{{ $tomorrow }}" onchange="submit()"/>
                         <div class="form-error">
                             @error('date')
                             {{ $message }}

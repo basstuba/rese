@@ -23,10 +23,14 @@ Route::get('/detail/{shop}', [ShopController::class, 'detail'])->name('detail');
 Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('linkRegister');
 Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
 Route::get('/thanks', [ShopController::class, 'thanks']);
-Route::get('/indicate', [ReseController::class, 'indicate']);/*予約フォームの値を表示するルート*/
-/*ここからバリデーションかけるルート*/
-Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
-Route::post('/reservation', [ReseController::class, 'create']);
-Route::post('/reservation/delete', [ReseController::class, 'delete']);
-Route::post('/favorite', [LikeController::class, 'likeCreate']);
-Route::post('/favorite/delete', [LikeController::class, 'likeDelete']);
+Route::get('/indicate', [ReseController::class, 'indicate']);
+
+Route::middleware('auth')->group(function() {
+    Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
+
+    Route::post('/reservation', [ReseController::class, 'create']);
+    Route::post('/reservation/delete', [ReseController::class, 'delete']);
+
+    Route::post('/favorite', [LikeController::class, 'likeCreate']);
+    Route::post('/favorite/delete', [LikeController::class, 'likeDelete']);
+});
