@@ -100,6 +100,7 @@
             </div>
             <div class="reserved-form">
                 <form class="form" action="/reservation" method="post">
+                    @csrf
                     <div class="reserved-content">
                         <table class="reserved-table">
                             <tr class="reserved-tr">

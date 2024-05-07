@@ -204,3 +204,7 @@
     border-radius: 0 0 0.3rem 0.3rem;
     cursor: pointer;
 }
+
+.form-error {
+    color: #ff4c4c;
+}

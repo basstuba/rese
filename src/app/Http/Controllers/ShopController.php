@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
-use App\Models\User;
 use App\Models\Reservation;
 use App\Models\Favorite;
 use App\Models\Time;
@@ -57,8 +56,8 @@ class ShopController extends Controller
 
     public function linkUser() {
         $user = Auth::user();
-        $reservations = Reservation::with('shop')->where('user_id', $user['id'])->get();
-        $favorites = Favorite::with('shop')->where('user_id', $user['id'])->get();
+        $reservations = Reservation::with('shop')->orderBy('date', 'asc')->orderBy('time', 'asc')->where('user_id', $user['id'])->get();
+        $favorites = Favorite::with('shop')->orderBy('shop_id', 'asc')->where('user_id', $user['id'])->get();
 
         return view('my-page', compact('user', 'reservations', 'favorites'));
     }

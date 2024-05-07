@@ -17,7 +17,7 @@
         {{ $user['name'] . 'さん' }}
     </div>
     <div class="main-content">
-        < class="reserved">
+        <div class="reserved">
             <div class="reserved-title">
                 <h2 class="reserved-title__logo">予約状況</h2>
             </div>
@@ -29,7 +29,7 @@
                             <img class="icon-clock" src="{{ asset('storage/image/icon_clock.png') }}" alt="時計のアイコン">
                         </div>
                         <div class="reserved-logo">
-                            {{ '予約' . $key + 1 }}
+                            {{ '予約' . ( $key + 1 ) }}
                         </div>
                     </div>
                     <div class="reserved-delete">

@@ -13,7 +13,9 @@
             <select class="search-select" name="area" onchange="submit()">
                 <option value="">All area</option>
                 @foreach($areas as $area)
-                <option value="{{ $area['search_area'] }}" {{ old('area') == $area['search_area'] ? 'selected' : ''}}>{{ $area['search_area'] }}</option>
+                <option value="{{ $area['search_area'] }}" {{ old('area') == $area['search_area'] ? 'selected' : ''}}>
+                    {{ $area['search_area'] }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -21,7 +23,9 @@
             <select class="search-select" name="genre" onchange="submit()">
                 <option value="">All genre</option>
                 @foreach($genres as $genre)
-                <option value="{{ $genre['search_genre'] }}" {{ old('genre') == $genre['search_genre'] ? 'selected' : ''}}>{{ $genre['search_genre'] }}</option>
+                <option value="{{ $genre['search_genre'] }}" {{ old('genre') == $genre['search_genre'] ? 'selected' : ''}}>
+                    {{ $genre['search_genre'] }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -79,8 +83,10 @@
                             </button>
                         </form>
                     @else
+                        @php $isFavorite = false; @endphp
                         @foreach($favorites as $favorite)
                             @if($favorite['shop_id'] == $shop['id'])
+                            @php $isFavorite = true; @endphp
                                 <form class="favorite-form__delete" action="/favorite/delete" method="post">
                                     @method('delete')
                                     @csrf
@@ -89,17 +95,19 @@
                                         <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
                                     </button>
                                 </form>
-                            @else
-                                <form class="favorite-form" action="/favorite" method="post">
-                                    @csrf
-                                    <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
-                                    <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
-                                    <button class="form-button" type="submit">
-                                        <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
-                                    </button>
-                                </form>
+                            @break
                             @endif
                         @endforeach
+                        @if(!$isFavorite)
+                            <form class="favorite-form" action="/favorite" method="post">
+                                @csrf
+                                <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
+                                <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
+                                <button class="form-button" type="submit">
+                                    <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
+                                </button>
+                            </form>
+                        @endif
                     @endif
                 </div>
             </div>
