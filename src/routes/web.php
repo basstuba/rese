@@ -5,7 +5,6 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReseController;
 use App\Http\Controllers\LikeController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,11 +21,11 @@ Route::get('/search', [ShopController::class, 'search']);
 Route::get('/detail/{shop}', [ShopController::class, 'detail'])->name('detail');
 Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('linkRegister');
 Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
-Route::get('/thanks', [ShopController::class, 'thanks']);
 
 Route::get('/indicate', [ReseController::class, 'indicate']);
 
-Route::middleware('auth')->group(function() {
+Route::middleware('verified')->group(function() {
+    Route::get('/thanks', [ShopController::class, 'thanks']);
     Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
 
     Route::post('/reservation', [ReseController::class, 'create']);
