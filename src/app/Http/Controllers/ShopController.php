@@ -61,4 +61,14 @@ class ShopController extends Controller
 
         return view('my-page', compact('user', 'reservations', 'favorites'));
     }
+
+    public function edit($reservationId) {
+        $reservation = Reservation::with('shop')->find($reservationId);
+
+        $times = Time::all();
+        $numbers = Number::all();
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        return view('edit', compact('reservation', 'times', 'numbers', 'tomorrow'));
+    }
 }

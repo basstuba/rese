@@ -31,6 +31,11 @@
                         <div class="reserved-logo">
                             {{ '予約' . ( $key + 1 ) }}
                         </div>
+                        <div class="reserved-edit">
+                            <a class="reserved-edit__button" href="{{ route('edit', ['reservation' => $reservation['id']]) }}">
+                                予約内容を変更する
+                            </a>
+                        </div>
                     </div>
                     <div class="reserved-delete">
                         <form class="delete-form" action="/reservation/delete" method="post">

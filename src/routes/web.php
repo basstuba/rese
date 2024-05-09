@@ -23,12 +23,15 @@ Route::get('/link/register', [ShopController::class, 'linkRegister'])->name('lin
 Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin');
 
 Route::get('/indicate', [ReseController::class, 'indicate']);
+Route::get('/indicate/edit', [ReseController::class, 'indicateEdit']);
 
 Route::middleware('verified')->group(function() {
     Route::get('/thanks', [ShopController::class, 'thanks']);
     Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
+    Route::get('/edit/{reservation}', [ShopController::class, 'edit'])->name('edit');
 
     Route::post('/reservation', [ReseController::class, 'create']);
+    Route::post('/reservation/edit', [ReseController::class, 'reservationEdit']);
     Route::delete('/reservation/delete', [ReseController::class, 'delete']);
 
     Route::post('/favorite', [LikeController::class, 'likeCreate']);

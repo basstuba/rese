@@ -31,4 +31,17 @@ class ReseController extends Controller
 
         return redirect('/link/user');
     }
+
+    public function indicateEdit(Request $request) {
+        $sendId = $request->only('sendId');
+
+        return redirect()->route('edit', [ 'reservation' => $sendId['sendId'] ])->withInput();
+    }
+
+    public function reservationEdit(ReseRequest $request) {
+        $edit = $request->only('date', 'time', 'number');
+        Reservation::find($request->id)->update($edit);
+
+        return view('edited');
+    }
 }

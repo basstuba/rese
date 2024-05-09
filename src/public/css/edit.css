@@ -1,0 +1,127 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.edit {
+    width: 45%;
+    height: 100%;
+    border-radius: 0.3rem;
+    background-color: #5061e1;
+    margin: 0 auto;
+    padding-top: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+}
+
+.edit-title__logo {
+    color: #fff;
+    margin: 2rem;
+}
+
+.indicate-date {
+    margin: 0 2rem;
+}
+
+.indicate-date__input {
+    width: 35%;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.indicate-date__input:focus-visible {
+    outline: 0;
+}
+
+.indicate-item {
+    position: relative;
+    margin: 0 2rem;
+}
+
+.indicate-item::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 0.2rem solid #c7c6c6;
+    border-bottom: 0.2rem solid #c7c6c6;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.indicate-item__select {
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.indicate-item__select:focus-visible {
+    outline: 0;
+}
+
+.edit-content {
+    margin: 0 2rem 3rem;
+    background-color: #678df4;
+    padding: 1.5rem 1rem;
+    border-radius: 0.3rem;
+}
+
+.edit-table {
+    width: 100%;
+}
+
+.edit-th {
+    width: 17%;
+    color: #fff;
+    text-align: left;
+    padding: 0.2rem;
+}
+
+.edit-td {
+    color: #fff;
+    text-align: left;
+    padding: 0.2rem;
+}
+
+.edit-value {
+    border: none;
+    color: #fff;
+    background-color: #678df4;
+}
+
+.edit-value:focus-visible {
+    outline: 0;
+}
+
+.edit-button__submit {
+    width: 100%;
+    color: #fff;
+    background-color: #384fff;
+    border: none;
+    font-size: larger;
+    padding: 1rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    cursor: pointer;
+}
+
+.form-error {
+    color: #ff4c4c;
+}
