@@ -153,5 +153,7 @@ return [
         'date' => '日付',
         'time' => '時間',
         'number' => '人数',
+        'evaluate' => '星の数',
+        'review_comment' => 'コメント'
     ],
 ];

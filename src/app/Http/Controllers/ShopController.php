@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
 use App\Models\Reservation;
 use App\Models\Favorite;
+use App\Models\Review;
 use App\Models\Time;
 use App\Models\Number;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\Evaluation;
 use Carbon\Carbon;
 
 class ShopController extends Controller
@@ -34,12 +36,14 @@ class ShopController extends Controller
 
     public function detail($shopId) {
         $shop = Shop::find($shopId);
+        $review = Review::orderBy('posted_on', 'desc')->where('shop_id', $shopId)->get();
 
         $times = Time::all();
         $numbers = Number::all();
+        $evaluations = Evaluation::all();
         $tomorrow = Carbon::tomorrow()->format('Y-m-d');
 
-        return view('shop', compact('shop', 'times', 'numbers', 'tomorrow'));
+        return view('shop', compact('shop', 'review', 'times', 'numbers', 'evaluations', 'tomorrow'));
     }
 
     public function linkRegister() {

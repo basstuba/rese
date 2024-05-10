@@ -36,4 +36,7 @@ Route::middleware('verified')->group(function() {
 
     Route::post('/favorite', [LikeController::class, 'likeCreate']);
     Route::delete('/favorite/delete', [LikeController::class, 'likeDelete']);
+
+    Route::get('/review/{shop}', [ReviewController::class, 'review'])->name('review');
+    Route::post('/review/create', [ReviewController::class, 'reviewCreate']);
 });
