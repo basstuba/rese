@@ -15,10 +15,10 @@ class ReviewFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1,10),
-            'shop_id' => $this->faker->numberBetween(1,20),
-            'evaluate' => $this->faker->numberBetween(1,5),
-            'review_comment' => $this->faker->text(50),
-            'posted_on' => $this->faker->dateTimeBetween('-1 week', '-4 week'),
+            'shop_id' => $this->faker->numberBetween(2,20),
+            'evaluate' => $this->faker->randomElement(['★★★★★', '★★★★☆', '★★★☆☆', '★★☆☆☆', '★☆☆☆☆']),
+            'review_comment' => $this->faker->realText(50),
+            'posted_on' => $this->faker->dateTimeBetween('-4 week', '-1 week'),
         ];
     }
 }

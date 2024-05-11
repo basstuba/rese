@@ -12,7 +12,6 @@ use App\Models\Time;
 use App\Models\Number;
 use App\Models\Area;
 use App\Models\Genre;
-use App\Models\Evaluation;
 use Carbon\Carbon;
 
 class ShopController extends Controller
@@ -36,14 +35,13 @@ class ShopController extends Controller
 
     public function detail($shopId) {
         $shop = Shop::find($shopId);
-        $review = Review::orderBy('posted_on', 'desc')->where('shop_id', $shopId)->get();
+        $reviews = Review::orderBy('posted_on', 'desc')->where('shop_id', $shopId)->get();
 
         $times = Time::all();
         $numbers = Number::all();
-        $evaluations = Evaluation::all();
         $tomorrow = Carbon::tomorrow()->format('Y-m-d');
 
-        return view('shop', compact('shop', 'review', 'times', 'numbers', 'evaluations', 'tomorrow'));
+        return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow'));
     }
 
     public function linkRegister() {

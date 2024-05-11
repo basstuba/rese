@@ -12,7 +12,7 @@
 .modal:target {
     visibility: visible;
     opacity: 1;
-    z-index: 2;
+    z-index: 3;
 }
 
 .main {
@@ -28,7 +28,12 @@
 }
 
 .shop-header {
-    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-header__main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -57,6 +62,97 @@
     font-size: xx-large;
     font-weight: bold;
     margin-left: 1rem;
+}
+
+.shop-header__review {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.shop-header__review-create {
+    margin-right: 1rem;
+}
+
+.review-create__button,
+.modal-review__button {
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.review-create__button:visited,
+.modal-review__button:visited {
+    color: #000;
+}
+
+.modal-review__page {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    padding: 2rem;
+}
+
+.modal-review__page:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+}
+
+.review-page__back {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.review-page__back-button {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: 0.1rem solid #384fff;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #384fff;
+    text-decoration: none;
+    font-size: larger;
+    font-family: none;
+}
+
+.review-content {
+    overflow-y: auto;
+    max-height: 33rem;
+}
+
+.review-none {
+    font-size: x-large;
+    width: 60%;
+    margin: 2rem auto;
+}
+
+.review-star {
+    color: #ffa500;
+    font-size: larger;
+}
+
+.review-text__comment {
+    font-size: large;
+    letter-spacing: 0.1rem;
+}
+
+.review-date {
+    border-bottom: 0.2rem solid #f5f5f5;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .shop-photo {

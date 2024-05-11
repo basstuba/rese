@@ -20,11 +20,47 @@
 <div class="main">
     <div class="shop">
         <div class="shop-header">
-            <div class="shop-header__back">
-                <a class="back-button" href="{{ route('index') }}">&lt;</a>
+            <div class="shop-header__main">
+                <div class="shop-header__back">
+                    <a class="back-button" href="{{ route('index') }}">&lt;</a>
+                </div>
+                <div class="shop-name">
+                    {{ $shop['name'] }}
+                </div>
             </div>
-            <div class="shop-name">
-                {{ $shop['name'] }}
+            <div class="shop-header__review">
+                @if(Auth::check())
+                    <div class="shop-header__review-create">
+                        <a class="review-create__button" href="{{ route('review', ['shop' => $shop['id']]) }}">
+                            レビューを投稿する
+                        </a>
+                    </div>
+                @endif
+                <div class="modal-review">
+                    <a class="modal-review__button" href="#reviewPage">レビューを見る</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-review__page" id="reviewPage">
+            <div class="review-page__back">
+                <a class="review-page__back-button" href="#">&times;</a>
+            </div>
+            <div class="review-content">
+                @if($reviews->isEmpty())
+                    <p class="review-none">このお店のレビューはまだありません</p>
+                @else
+                    @foreach($reviews as $review)
+                        <div class="review-star">
+                            {{ $review['evaluate'] }}
+                        </div>
+                        <div class="review-text">
+                            <p class="review-text__comment">{{ $review['review_comment'] }}</p>
+                        </div>
+                        <div class="review-date">
+                            {{ $review['posted_on']}}
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="shop-photo">
