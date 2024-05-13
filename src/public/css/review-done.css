@@ -1,0 +1,50 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.main {
+    width: 100%;
+    padding: 2rem;
+}
+
+.main-content {
+    width: 30%;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem #979797;
+}
+
+.content-text__message {
+    font-weight: bold;
+    font-size: larger;
+    letter-spacing: 0.2rem;
+}
+
+.content-button {
+    margin-top: 3rem;
+}
+
+.content-button__back {
+    background-color: #384fff;
+    color: #fff;
+    font-size: larger;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.7rem;
+    text-decoration: none;
+}
