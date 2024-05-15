@@ -26,6 +26,10 @@ class Shop extends Model
         return $this->hasMany('App\Models\Favorite');
     }
 
+    public function manager() {
+        return $this->hasOne('App\Models\Manager');
+    }
+
     public function scopeAreaSearch($query, $area) {
         if(!empty($area)) {
             $query->where('area', $area);

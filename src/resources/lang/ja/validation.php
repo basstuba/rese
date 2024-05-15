@@ -38,7 +38,7 @@ return [
     'digits_between'       => ':attributeは、:min桁から:max桁にしてください。',
     'dimensions'           => ':attributeの画像サイズが無効です',
     'distinct'             => ':attributeの値が重複しています。',
-    'email'                => ':attributeは、有効なメールアドレス形式で指定してください。',
+    'email'                => ':attributeは、有効なメールアドレス形式で入力してください',
     'ends_with'            => ':attributeは、次のうちのいずれかで終わらなければなりません。: :values',
     'exists'               => '選択された:attributeは、有効ではありません。',
     'file'                 => ':attributeはファイルでなければいけません。',
@@ -78,7 +78,7 @@ return [
     'max'                  => [
         'numeric' => ':attributeには、:max以下の数字を指定してください。',
         'file'    => ':attributeには、:max KB以下のファイルを指定してください。',
-        'string'  => ':attributeは、:max文字以下にしてください。',
+        'string'  => ':attributeは:max文字以下にしてください',
         'array'   => ':attributeの項目は、:max個以下にしてください。',
     ],
     'mimes'                => ':attributeには、:valuesタイプのファイルを指定してください。',
@@ -96,7 +96,7 @@ return [
     'password'             => 'パスワードが正しくありません。',
     'present'              => ':attributeが存在している必要があります。',
     'regex'                => ':attributeには、有効な正規表現を指定してください。',
-    'required'             => ':attributeを入力してください。',
+    'required'             => ':attributeを入力してください',
     'required_if'          => ':otherが:valueの場合、:attributeを指定してください。',
     'required_unless'      => ':otherが:values以外の場合、:attributeを指定してください。',
     'required_with'        => ':valuesが指定されている場合、:attributeも指定してください。',
@@ -113,7 +113,7 @@ return [
     'starts_with'          => ':attributeは、次のいずれかで始まる必要があります。:values',
     'string'               => ':attributeには、文字を指定してください。',
     'timezone'             => ':attributeには、有効なタイムゾーンを指定してください。',
-    'unique'               => '指定の:attributeは既に使用されています。',
+    'unique'               => 'この:attributeは既に使用されています',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeは、有効なURL形式で指定してください。',
     'uuid'                 => ':attributeは、有効なUUIDでなければなりません。',
@@ -130,8 +130,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'img_url' => [
+            'required' => '画像を選択してください',
         ],
     ],
 
@@ -154,6 +154,10 @@ return [
         'time' => '時間',
         'number' => '人数',
         'evaluate' => '星の数',
-        'review_comment' => 'コメント'
+        'review_comment' => 'コメント',
+        'area' => '地域',
+        'genre' => 'ジャンル',
+        'comment' => '店舗概要',
+        'img_url' => '画像'
     ],
 ];
