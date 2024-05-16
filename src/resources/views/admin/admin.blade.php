@@ -8,7 +8,7 @@
 <div class="main">
     <div class="admin-header">
         <div class="admin-header__message">
-            登録が完了しました<!--作成完了時のリダイレクトでこのメッセージを送る-->
+            {{ $completion ?? '' }}&emsp;<!--登録完了メッセージ。リダイレクトで「登録完了しました」と返す-->
         </div>
         <div class="admin-header__title">
             <h2 class="admin-header__logo">店舗代表者登録</h2>
@@ -27,15 +27,15 @@
                     </td>
                 </tr>
                 <tr class="admin-tr">
-                    <th class="admin-th">
+                    <th class="admin-th">&emsp;</th>
+                    <td class="admin-td">
                         <div class="admin-content__error">
                             @error('name')
                                 {{ $message }}
                             @enderror
                             &emsp;
                         </div>
-                    </th>
-                    <td class="admin-td">&emsp;</td>
+                    </td>
                 </tr>
                 <tr class="admin-tr">
                     <th class="admin-th">メールアドレス</th>
@@ -46,40 +46,40 @@
                     </td>
                 </tr>
                 <tr class="admin-tr">
-                    <th class="admin-th">
+                    <th class="admin-th">&emsp;</th>
+                    <td class="admin-td">
                         <div class="admin-content__error">
                             @error('email')
                                 {{ $message }}
                             @enderror
                             &emsp;
                         </div>
-                    </th>
-                    <td class="admin-td">&emsp;</td>
+                    </td>
                 </tr>
                 <tr class="admin-tr">
                     <th class="admin-th">パスワード</th>
                     <td class="admin-td">
                         <div class="admin-content__item">
-                            <input class="admin-content__input" type="password" name="password"/>
+                            <input class="admin-content__input" type="text" name="password"/>
                         </div>
                     </td>
                 </tr>
                 <tr class="admin-tr">
-                    <th class="admin-th">
+                    <th class="admin-th">&emsp;</th>
+                    <td class="admin-td">
                         <div class="admin-content__error">
                             @error('password')
                                 {{ $message }}
                             @enderror
                             &emsp;
                         </div>
-                    </th>
-                    <td class="admin-td">&emsp;</td>
+                    </td>
                 </tr>
                 <tr class="admin-tr">
                     <th class="admin-th">担当店舗</th>
                     <td class="admin-td">
                         <div class="admin-content__item">
-                            <select name="shop_id">
+                            <select class="admin-content__select" name="shop_id">
                                 <option value="">未定</option>
                                 @foreach($shops as $shop)
                                 <option value="{{ $shop['id'] }}" {{ old('shop_id') == $shop['id'] ? 'selected' : ''}}>{{ $shop['name'] }}</option>
@@ -89,15 +89,15 @@
                     </td>
                 </tr>
                 <tr class="admin-tr">
-                    <th class="admin-th">
+                    <th class="admin-th">&emsp;</th>
+                    <td class="admin-td">
                         <div class="admin-content__error">
                             @error('shop_id')
                                 {{ $message }}
                             @enderror
                             &emsp;
                         </div>
-                    </th>
-                    <td class="admin-td">&emsp;</td>
+                    </td>
                 </tr>
             </table>
             <div class="admin-content__button">

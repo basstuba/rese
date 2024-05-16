@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
-    public function test() {
+    public function adminIndex() {
         $shops = Shop::all();
 
         return view('admin.admin', compact('shops'));

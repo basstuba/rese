@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-item">
                     <div class="form-item__input-password">
-                        <input class="form-item__input" type="password" name="password" placeholder="Password"/>
+                        <input class="form-item__input" type="text" name="password" placeholder="Password"/>
                     </div>
                     <div class="form-item__error">
                         @error('password')

@@ -66,4 +66,4 @@ Route::prefix('manager')->middleware('auth:manager')->group(function() {
 Route::post('/mail', [MailController::class, 'send'])->middleware('auth:manager');
 
 //レイアウト確認用//
-Route::get('/test', [AdminController::class, 'test']);
+Route::get('/test', [MailController::class, 'test']);

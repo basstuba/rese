@@ -1,0 +1,75 @@
+.admin-header {
+    text-align: center;
+}
+
+.admin-header__message {
+    font-size: xx-large;
+}
+
+.admin-header__logo {
+    color: #ffc266;
+    font-size: xx-large;
+}
+
+.admin-content {
+    width: 40%;
+    text-align: center;
+    background-color: #ffc266;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+}
+
+.admin-table {
+    margin: 0 auto;
+}
+
+.admin-th {
+    text-align: start;
+    font-size: larger;
+    font-weight: bold;
+    width: 30%;
+}
+
+.admin-td {
+    width: 60%;
+}
+
+.admin-content__input {
+    width: 100%;
+    font-size: large;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.admin-content__input:focus-visible {
+    outline: 0;
+}
+
+.admin-content__select {
+    width: 100%;
+    font-size: large;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.admin-content__select:focus-visible {
+    outline: 0;
+}
+
+.admin-content__error {
+    color: #fd2626;
+}
+
+.admin-content__button-submit {
+    background-color: #ff9900;
+    color: #fff;
+    font-size: larger;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+}
