@@ -1,0 +1,28 @@
+.body {
+    background-color: #f5f5f5;
+    font-family: "Almarai", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    color: #ffc266;
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-left: 3rem;
+}
+
+.logout-button {
+    background-color: #ffc266;
+    color: #fff;
+    font-size: x-large;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    padding: 0.3rem 0.7rem;
+    margin-right: 3rem;
+}

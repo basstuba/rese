@@ -158,6 +158,7 @@ return [
         'area' => '地域',
         'genre' => 'ジャンル',
         'comment' => '店舗概要',
-        'img_url' => '画像'
+        'img_url' => '画像',
+        'guard' => '役職'
     ],
 ];

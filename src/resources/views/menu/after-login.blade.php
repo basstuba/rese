@@ -15,5 +15,10 @@
         <div class="menu-item">
             <a class="menu-item__link" href="{{ route('linkUser') }}">Mypage</a>
         </div>
+        @if($user['role'] == 'company')
+        <div class="menu-item">
+            <a class="menu-item__link" href="{{ route('multiIndex') }}">ManagementLogin</a>
+        </div>
+        @endif
     </div>
 </div>

@@ -10,5 +10,9 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
-    //
+    public function test() {
+        $shops = Shop::all();
+
+        return view('admin.admin', compact('shops'));
+    }
 }

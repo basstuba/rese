@@ -5,6 +5,9 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReseController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,9 @@ Route::get('/link/login', [ShopController::class, 'linkLogin'])->name('linkLogin
 Route::get('/indicate', [ReseController::class, 'indicate']);
 Route::get('/indicate/edit', [ReseController::class, 'indicateEdit']);
 
+Route::get('/multi/index', [AdminController::class, 'multiIndex'])->name('multiIndex');
+Route::post('/multi/login', [AdminController::class, 'multiLogin']);
+
 Route::middleware('verified')->group(function() {
     Route::get('/thanks', [ShopController::class, 'thanks']);
     Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
@@ -41,3 +47,23 @@ Route::middleware('verified')->group(function() {
     Route::get('/review/{shop}', [ReviewController::class, 'review'])->name('review');
     Route::post('/review/create', [ReviewController::class, 'reviewCreate']);
 });
+
+Route::prefix('admin')->middleware('auth:admin')->group(function() {
+    Route::get('/index', [AdminController::class, 'adminIndex']);
+    Route::post('/create', [AdminController::class, 'adminCreate']);
+});
+
+Route::prefix('manager')->middleware('auth:manager')->group(function() {
+    Route::get('/index', [ManagerController::class, 'managerIndex']);
+    Route::get('/reservation', [ManagerController::class, 'managerReservation'])->name('managerReservation');
+    Route::get('/new', [ManagerController::class, 'managerNew'])->name('managerNew');
+    Route::post('/create', [ManagerController::class, 'managerCreate']);
+    Route::get('/edit', [ManagerController::class, 'managerEdit'])->name('managerEdit');
+    Route::post('/update', [ManagerController::class, 'managerUpdate']);
+    Route::post('/upload', [ManagerController::class, 'managerUpload']);
+});
+
+Route::post('/mail', [MailController::class, 'send'])->middleware('auth:manager');
+
+//レイアウト確認用//
+Route::get('/test', [AdminController::class, 'test']);
