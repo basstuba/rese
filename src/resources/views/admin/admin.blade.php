@@ -8,7 +8,7 @@
 <div class="main">
     <div class="admin-header">
         <div class="admin-header__message">
-            {{ $completion ?? '' }}&emsp;<!--登録完了メッセージ。リダイレクトで「登録完了しました」と返す-->
+            {{ session('message') ?? '' }}&emsp;
         </div>
         <div class="admin-header__title">
             <h2 class="admin-header__logo">店舗代表者登録</h2>

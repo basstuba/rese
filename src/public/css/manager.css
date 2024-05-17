@@ -1,0 +1,69 @@
+.main {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 2rem 1rem 2rem;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+}
+
+.manager-nav {
+    margin-bottom: 1rem;
+}
+
+.manager-link {
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffc266;
+}
+
+.manager-link:visited {
+    color: #ffc266;
+}
+
+.manager-link__dummy {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #808080;
+}
+
+.manager-content {
+    width: 70%;
+    padding: 0.5rem 0 2rem;
+    margin: 0 auto;
+    background-color: #ffc266;
+    border-radius: 0.3rem;
+}
+
+.manager-content__input::file-selector-button {
+    background-color: #fff;
+    color: #ff9900;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    cursor: pointer;
+}
+
+.manager-content__input {
+    font-size: larger;
+    padding: 0.3rem 0.5rem;
+}
+
+.manager-content__submit {
+    margin-top: 2rem;
+    padding: 0.3rem 0.7rem;
+    font-size: larger;
+    background-color: #fff;
+    color: #ff9900;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    cursor: pointer;
+}
+
+.manager-content__message {
+    font-size: xx-large;
+    margin-top: 0.5rem;
+}

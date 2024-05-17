@@ -84,6 +84,12 @@
     color: #ff4c4c;
 }
 
+.form-item__error-guard {
+    color: #ff4c4c;
+    text-align: end;
+    padding-right: 2rem;
+}
+
 .form-button__submit {
     background-color: #ffc266;
     color: #fff;

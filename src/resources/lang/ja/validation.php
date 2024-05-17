@@ -133,6 +133,9 @@ return [
         'img_url' => [
             'required' => '画像を選択してください',
         ],
+        'guard' => [
+            'required' => '役職を選択してください',
+        ],
     ],
 
     /*

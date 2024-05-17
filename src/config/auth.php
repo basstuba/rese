@@ -82,7 +82,7 @@ return [
 
         'managers' => [
             'driver' => 'eloquent',
-            'model' => App\Model\Manager::class,
+            'model' => App\Models\Manager::class,
         ]
 
         // 'users' => [

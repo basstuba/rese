@@ -11,6 +11,12 @@
             <h2 class="main-content__logo">ManagementLogin</h2>
         </div>
         <div class="main-item">
+            <Div class="form-item__error">
+                @error('auth')
+                    {{ $message }}
+                @enderror
+                &emsp;
+            </Div>
             <form class="form" action="/multi/login" method="post">
                 @csrf
                 <div class="form-item">
@@ -41,7 +47,7 @@
                         <option value="admin">管理者</option>
                         <option value="manager">店舗代表者</option>
                     </select>
-                    <div class="form-item__error">
+                    <div class="form-item__error-guard">
                         @error('guard')
                             {{ $message }}
                         @enderror

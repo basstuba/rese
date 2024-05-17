@@ -55,15 +55,12 @@ Route::prefix('admin')->middleware('auth:admin')->group(function() {
 
 Route::prefix('manager')->middleware('auth:manager')->group(function() {
     Route::get('/index', [ManagerController::class, 'managerIndex']);
-    Route::get('/reservation', [ManagerController::class, 'managerReservation'])->name('managerReservation');
+    Route::get('/reservation/{store}', [ManagerController::class, 'managerReservation'])->name('managerReservation');
     Route::get('/new', [ManagerController::class, 'managerNew'])->name('managerNew');
     Route::post('/create', [ManagerController::class, 'managerCreate']);
-    Route::get('/edit', [ManagerController::class, 'managerEdit'])->name('managerEdit');
+    Route::get('/edit/{store}', [ManagerController::class, 'managerEdit'])->name('managerEdit');
     Route::post('/update', [ManagerController::class, 'managerUpdate']);
     Route::post('/upload', [ManagerController::class, 'managerUpload']);
 });
 
 Route::post('/mail', [MailController::class, 'send'])->middleware('auth:manager');
-
-//レイアウト確認用//
-Route::get('/test', [MailController::class, 'test']);
