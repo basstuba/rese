@@ -43,4 +43,17 @@ class ManagerController extends Controller
 
         return view('admin.shop-update', compact('shop', 'areas', 'genres', 'images'));
     }
+
+    public function managerUpload(Request $request) {
+        $dir = 'image';
+        $fileName = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs('public/' . $dir, $fileName);
+
+        $image['image_name'] = $fileName;
+        $image['image_url'] = 'storage/' . $dir . '/' . $fileName;
+        Image::create($image);
+
+        return redirect('/manager/index')->with('message', 'アップロード完了しました');
+    }
 }

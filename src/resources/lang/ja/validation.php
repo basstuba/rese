@@ -136,6 +136,9 @@ return [
         'guard' => [
             'required' => '役職を選択してください',
         ],
+        'reservationId' => [
+            'required' => 'お客様氏名を選択してください',
+        ],
     ],
 
     /*
@@ -162,6 +165,7 @@ return [
         'genre' => 'ジャンル',
         'comment' => '店舗概要',
         'img_url' => '画像',
-        'guard' => '役職'
+        'guard' => '役職',
+        'reservation' => 'お客様氏名',
     ],
 ];

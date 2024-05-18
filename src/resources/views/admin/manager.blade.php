@@ -28,7 +28,7 @@
             <h2 class="manager-content__logo">画像アップロード</h2>
         </div>
         <div class="manager-content__main">
-            <form class="manager-content__form" action="/upload" method="post" enctype="multipart/form-data">
+            <form class="manager-content__form" action="/manager/upload" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="manager-content__item">
                     <input class="manager-content__input" type="file" name="image">
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="manager-content__message">
-        {{ session('message') ?? '' }}&emsp;<!--アップロード完了メッセージ。リダイレクトで「アップロード完了しました」と返す-->
+        {{ session('message') ?? '' }}&emsp;
     </div>
 </div>
 @endsection

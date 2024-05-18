@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ImagesTableSeeder::class);
         $this->call(ManagersTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        User::factory(10)->create();
-        Reservation::factory(60)->create();
-        Review::factory(60)->create();
+        User::factory(20)->create();
+        Reservation::factory(200)->create();
+        Review::factory(200)->create();
     }
 }

@@ -54,7 +54,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function() {
 });
 
 Route::prefix('manager')->middleware('auth:manager')->group(function() {
-    Route::get('/index', [ManagerController::class, 'managerIndex']);
+    Route::get('/index', [ManagerController::class, 'managerIndex'])->name('managerIndex');
     Route::get('/reservation/{store}', [ManagerController::class, 'managerReservation'])->name('managerReservation');
     Route::get('/new', [ManagerController::class, 'managerNew'])->name('managerNew');
     Route::post('/create', [ManagerController::class, 'managerCreate']);
