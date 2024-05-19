@@ -32,6 +32,9 @@ Route::get('/indicate/edit', [ReseController::class, 'indicateEdit']);
 Route::get('/multi/index', [AdminController::class, 'multiIndex'])->name('multiIndex');
 Route::post('/multi/login', [AdminController::class, 'multiLogin']);
 
+Route::get('/show', [ManagerController::class, 'show']);
+Route::get('/show/edit', [ManagerController::class, 'showEdit']);
+
 Route::middleware('verified')->group(function() {
     Route::get('/thanks', [ShopController::class, 'thanks']);
     Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');

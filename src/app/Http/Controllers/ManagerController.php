@@ -31,8 +31,18 @@ class ManagerController extends Controller
         $areas = Area::all();
         $genres = Genre::all();
         $images = Image::all();
+        $managers = Manager::all();
 
-        return view('admin.shop-create', compact('areas', 'genres', 'images'));
+        return view('admin.shop-create', compact('areas', 'genres', 'images', 'managers'));
+    }
+
+    public function show(Request $request) {
+        $managerId = $request->only('shopManager');
+        $shopManager = !empty($managerId) ? Manager::find($managerId['shopManager']) : null ;
+
+        $managerName = $shopManager ? $shopManager->name : '' ;
+
+        return redirect('/manager/new')->withInput()->with('managerName', $managerName);
     }
 
     public function managerUpdate($shopId) {
@@ -40,8 +50,9 @@ class ManagerController extends Controller
         $areas = Area::all();
         $genres = Genre::all();
         $images = Image::all();
+        $managers = Manager::all();
 
-        return view('admin.shop-update', compact('shop', 'areas', 'genres', 'images'));
+        return view('admin.shop-update', compact('shop', 'areas', 'genres', 'images', 'managers'));
     }
 
     public function managerUpload(Request $request) {
