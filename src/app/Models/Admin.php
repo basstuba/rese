@@ -16,6 +16,5 @@ class Admin extends Authenticatable
         'email',
         'email_verified_at',
         'password',
-        'role',
     ];
 }

@@ -17,7 +17,6 @@ class Manager extends Authenticatable
         'email',
         'email_verified_at',
         'password',
-        'role',
     ];
 
     public function shop() {

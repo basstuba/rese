@@ -21,7 +21,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-1@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager1'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -32,7 +31,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-2@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager2'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -43,7 +41,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-3@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager3'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -54,7 +51,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-4@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager4'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -65,7 +61,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-5@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager5'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -76,7 +71,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-6@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager6'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -87,7 +81,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-7@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager7'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -98,7 +91,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-8@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager8'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -109,7 +101,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-9@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager9'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -120,7 +111,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-10@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager10'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -131,7 +121,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-11@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager11'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -142,7 +131,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-12@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager12'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -153,7 +141,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-13@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager13'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -164,7 +151,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-14@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager14'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -175,7 +161,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-15@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager15'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -186,7 +171,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-16@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager16'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -197,7 +181,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-17@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager17'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -208,7 +191,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-18@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager18'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -219,7 +201,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-19@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager19'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);
@@ -230,7 +211,6 @@ class ManagersTableSeeder extends Seeder
             'email' => 'manager-20@manager.com',
             'email_verified_at' => '2024-05-15 10:35:00',
             'password' => Hash::make('manager20'),
-            'role' => 'manager',
             'remember_token' => ''
         ];
         DB::table('managers')->insert($param);

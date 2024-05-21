@@ -3,6 +3,12 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReminderMail;
+use App\Models\User;
+use App\Models\Reservation;
+use Carbon\Carbon;
+use QrCode;
 
 class Reminder extends Command
 {
@@ -11,14 +17,14 @@ class Reminder extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'email:reminder';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Emailのreminder送信';
 
     /**
      * Create a new command instance.
@@ -37,6 +43,19 @@ class Reminder extends Command
      */
     public function handle()
     {
-        return 0;
+        $today = Carbon::today()->format('Y-m-d');
+        $reservations = Reservation::with('user')->where('date', $today)->get();
+
+        foreach($reservations as $reservation) {
+
+            $qrCode = base64_encode(QrCode::format('png')->encoding('UTF-8')
+            ->generate(
+                $reservation->user->name . '/' .
+                $reservation->date . '/' .
+                $reservation->time . '/' .
+                $reservation->number));
+
+            Mail::send(new ReminderMail($reservation, $qrCode));
+        }
     }
 }

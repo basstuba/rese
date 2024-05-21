@@ -16,10 +16,10 @@ class ReminderMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user, $qrCode)
+    public function __construct($reservation, $qrCode)
     {
-        $this->name = $user['name'];
-        $this->email = $user['email'];
+        $this->name = $reservation->user->name;
+        $this->email = $reservation->user->email;
         $this->qrCode = $qrCode;
     }
 

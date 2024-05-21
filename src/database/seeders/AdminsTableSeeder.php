@@ -20,7 +20,6 @@ class AdminsTableSeeder extends Seeder
             'email' => 'admin@admin.com',
             'email_verified_at' => '2024-05-15 10:30:00',
             'password' => Hash::make('administrator'),
-            'role' => 'admin',
             'remember_token' => ''
         ];
         DB::table('admins')->insert($param);

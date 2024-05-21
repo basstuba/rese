@@ -38,7 +38,6 @@ class AdminController extends Controller
         $manager = $request->only('shop_id', 'name', 'email',);
         $manager['password'] = Hash::make($request->password);
         $manager['email_verified_at'] = Carbon::now();
-        $manager['role'] = 'manager';
 
         Manager::create($manager);
 

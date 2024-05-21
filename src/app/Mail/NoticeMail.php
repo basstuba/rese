@@ -16,10 +16,10 @@ class NoticeMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user, $qrCode)
+    public function __construct($reserved, $qrCode)
     {
-        $this->name = $user['name'];
-        $this->email = $user['email'];
+        $this->name = $reserved->user->name;
+        $this->email = $reserved->user->email;
         $this->qrCode = $qrCode;
     }
 
