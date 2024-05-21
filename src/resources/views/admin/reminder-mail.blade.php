@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoticeMail</title>
+    <title>ReminderMail</title>
     <style>
         .mail-name {
             font-size: x-large;
@@ -20,6 +20,7 @@
         <div class="mail-text">
             <p class="mail-text__main">
                 この度はご予約いただき誠にありがとうございます。<br>
+                本日はご予約いただいた日になります。<br>
                 ご来店の際はお手数をおかけしますがこちらのQRコードをスタッフに提示してください。
             </p>
         </div>

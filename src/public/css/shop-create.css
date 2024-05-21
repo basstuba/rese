@@ -202,9 +202,9 @@
     background-color: #fff;
 }
 
-.create-shop__name-input,
-.data-input,
-.create-shop__comment {
+.create-shop__name-input:focus-visible,
+.data-input:focus-visible,
+.create-shop__comment:focus-visible {
     outline: 0;
 }
 
@@ -231,4 +231,5 @@
     box-shadow: 0.1rem 0.1rem 0.1rem #979797;
     padding: 0.2rem 0.5rem;
     font-size: large;
+    cursor: pointer;
 }

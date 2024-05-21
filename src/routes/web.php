@@ -32,9 +32,6 @@ Route::get('/indicate/edit', [ReseController::class, 'indicateEdit']);
 Route::get('/multi/index', [AdminController::class, 'multiIndex'])->name('multiIndex');
 Route::post('/multi/login', [AdminController::class, 'multiLogin']);
 
-Route::get('/show', [ManagerController::class, 'show']);
-Route::get('/show/edit', [ManagerController::class, 'showEdit']);
-
 Route::middleware('verified')->group(function() {
     Route::get('/thanks', [ShopController::class, 'thanks']);
     Route::get('/link/user', [ShopController::class, 'linkUser'])->name('linkUser');
@@ -63,6 +60,8 @@ Route::prefix('manager')->middleware('auth:manager')->group(function() {
     Route::post('/create', [ManagerController::class, 'managerCreate']);
     Route::get('/edit/{store}', [ManagerController::class, 'managerEdit'])->name('managerEdit');
     Route::post('/update', [ManagerController::class, 'managerUpdate']);
+    Route::get('/show', [ManagerController::class, 'show']);
+    Route::get('/show/edit', [ManagerController::class, 'showEdit']);
     Route::post('/upload', [ManagerController::class, 'managerUpload']);
 });
 

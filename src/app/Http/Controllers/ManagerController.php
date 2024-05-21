@@ -45,14 +45,52 @@ class ManagerController extends Controller
         return redirect('/manager/new')->withInput()->with('managerName', $managerName);
     }
 
-    public function managerUpdate($shopId) {
+    public function managerCreate(ManagerRequest $request) {
+        $shop = $request->only('name', 'img_url', 'area', 'genre', 'comment');
+        Shop::create($shop);
+
+        $managerId = $request->only('managerId');
+        if(!empty($managerId['managerId'])) {
+            $newShop = Shop::latest()->where('name', $shop['name'])->first();
+            $newShopId['shop_id'] = $newShop['id'];
+
+            Manager::find($managerId['managerId'])->update($newShopId);
+
+            return redirect('/manager/new')->with('message', '作成完了しました');
+        }else{
+
+            return redirect('/manager/new')->with('message', '作成完了しました');
+        }
+    }
+
+    public function managerEdit($shopId) {
         $shop = Shop::find($shopId);
         $areas = Area::all();
         $genres = Genre::all();
         $images = Image::all();
         $managers = Manager::all();
+        $user = Auth::user();
 
-        return view('admin.shop-update', compact('shop', 'areas', 'genres', 'images', 'managers'));
+        return view('admin.shop-update', compact('shop', 'areas', 'genres', 'images', 'managers', 'user'));
+    }
+
+    public function showEdit(Request $request) {
+        $managerId = $request->only('shopManager');
+        $shopManager = !empty($managerId) ? Manager::find($managerId['shopManager']) : null ;
+
+        $user = Auth::user();
+        $managerName = $shopManager ? $shopManager->name : $user['name'] ;
+
+        return redirect()->route('managerEdit', ['store' => $user['shop_id']])->withInput()->with('managerName', $managerName);
+    }
+
+    public function managerUpdate(ManagerRequest $request) {
+        $edit = $request->only('name', 'img_url', 'area', 'genre', 'comment');
+        Shop::find($request->shop_id)->update($edit);
+
+        $shopId = $request->only('shop_id');
+
+        return redirect()->route('managerEdit', ['store' => $shopId['shop_id']])->with('message', '更新完了しました');
     }
 
     public function managerUpload(Request $request) {

@@ -14,11 +14,11 @@
     </div>
 </div>
 <div class="shop-message">
-    <!--{{ session('message') ?? '' }}&emsp;-->作成完了しました
+    {{ session('message') ?? '' }}&emsp;
 </div>
 <div class="shop-main">
     <div class="show">
-        <form class="show-form" action="/show" method="get">
+        <form class="show-form" action="/manager/show" method="get">
             <div class="show-item">
                 <label class="show-title">店名</label>
                 <input class="show-name__input" type="text" name="shopName" value="{{ old('shopName') }}" onchange="submit()"/>
