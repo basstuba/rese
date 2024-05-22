@@ -20,10 +20,21 @@
     padding: 0 4rem;
 }
 
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stripe {
+    width: 30%;
+    margin-left: 4rem;
+}
+
 .user-name {
+    width: 50%;
     font-size: x-large;
     font-weight: bold;
-    text-align: center;
 }
 
 .main-content {

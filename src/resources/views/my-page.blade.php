@@ -13,8 +13,26 @@
 
 @section('content')
 <div class="main">
-    <div class="user-name">
-        {{ $user['name'] . 'さん' }}
+    <div class="main-header">
+        <div class="stripe">
+            <form action="{{route('stripeCharge')}}" method="POST">
+                @csrf
+                <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ env('STRIPE_KEY') }}"
+                    data-amount="1000"
+                    data-name="お支払い画面"
+                    data-label="決済をする"
+                    data-description="現在はデモ画面です"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto"
+                    data-currency="JPY">
+                </script>
+            </form>
+        </div>
+        <div class="user-name">
+            {{ $user['name'] . 'さん' }}
+        </div>
     </div>
     <div class="main-content">
         <div class="reserved">

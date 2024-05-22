@@ -8,6 +8,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,8 @@ Route::middleware('verified')->group(function() {
 
     Route::get('/review/{shop}', [ReviewController::class, 'review'])->name('review');
     Route::post('/review/create', [ReviewController::class, 'reviewCreate']);
+
+    Route::post('/charge', [StripeController::class, 'charge'])->name('stripeCharge');
 });
 
 Route::prefix('admin')->middleware('auth:admin')->group(function() {
