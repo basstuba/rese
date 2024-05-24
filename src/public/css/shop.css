@@ -22,9 +22,23 @@
     position: relative;
 }
 
+@media screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+        display: contents;
+    }
+}
+
 .shop {
     width: 40%;
     margin-left: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .shop {
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 
 .shop-header {
@@ -139,6 +153,12 @@
     margin: 2rem auto;
 }
 
+@media screen and (max-width: 768px) {
+    .review-none {
+        font-size: larger;
+    }
+}
+
 .review-star {
     color: #ffa500;
     font-size: larger;
@@ -196,6 +216,15 @@
     top: -3rem;
     left: 0;
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
+}
+
+@media screen and (max-width: 768px) {
+    .reserved {
+        width: 70%;
+        margin: 1rem auto;
+        top: 0;
+        padding: 0.1rem;
+    }
 }
 
 .reserved-title__logo {
@@ -289,6 +318,12 @@
     width: 100%;
     position: absolute;
     bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .reserved-button {
+        position: relative;
+    }
 }
 
 .reserved-button__submit {

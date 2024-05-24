@@ -130,12 +130,24 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .shop-detail {
+        margin-top: 0.5rem;
+    }
+}
+
 .shop-link__button {
     background-color: #384fff;
     color: #fff;
     border-radius: 0.3rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .shop-link__button {
+        padding: 0.2rem 0.5rem;
+    }
 }
 
 .favorite {

@@ -28,6 +28,12 @@
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    .menu-content {
+        width: 50%;
+    }
+}
+
 .menu-item {
     margin: 1rem;
 }

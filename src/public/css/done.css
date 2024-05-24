@@ -30,6 +30,12 @@
     box-shadow: 0.1rem 0.1rem 0.3rem #979797;
 }
 
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 70%;
+    }
+}
+
 .content-text__message {
     font-weight: bold;
     font-size: larger;

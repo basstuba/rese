@@ -48,6 +48,12 @@
 
 }
 
+@media screen and (max-width: 768px) {
+    .reserved {
+        width: 45%;
+    }
+}
+
 .reserved-content {
     width: 100%;
     background-color: #384fff;
@@ -70,9 +76,21 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .reserved-count {
+        display: inline-block;
+    }
+}
+
 .reserved-icon {
     width: 8%;
     margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .reserved-icon {
+        width: 10%;
+    }
 }
 
 .icon-clock {
@@ -94,6 +112,13 @@
     box-shadow: 0.1rem 0.1rem 0.3rem #000000;
 }
 
+@media screen and (max-width: 768px) {
+    .reserved-edit__button {
+        font-size: medium;
+        margin-left: 0rem;
+    }
+}
+
 .delete-button {
     width: 2rem;
     height: 2rem;
@@ -101,7 +126,9 @@
     border-radius: 1rem;
     color: #fff;
     background-color: #384fff;
-    font-size: x-large;
+    font-size: large;
+    font-family: none;
+    padding: 0 0.2rem;
     text-align: center;
     align-content: center;
     cursor: pointer;
@@ -122,12 +149,24 @@
     font-size: larger;
 }
 
+@media screen and (max-width: 768px) {
+    .reserved-th {
+        width: 40%;
+    }
+}
+
 .reserved-td {
     font-size: larger;
 }
 
 .like {
     width: 57%;
+}
+
+@media screen and (max-width: 768px) {
+    .like {
+        width: 40%;
+    }
 }
 
 .favorite-content {
@@ -144,6 +183,12 @@
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
     background-color: #fff;
     margin: 0 2rem 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .shop {
+        width: 80%;
+    }
 }
 
 .shop-photo {

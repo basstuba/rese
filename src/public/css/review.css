@@ -37,6 +37,12 @@
     padding: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+    }
+}
+
 .shop-name {
     font-size: xx-large;
     color: #fff;
@@ -60,6 +66,12 @@
     pointer-events: none;
 }
 
+@media screen and (max-width: 768px) {
+    .review-star::after {
+        right: 13rem;
+    }
+}
+
 .review-select {
     width: 35%;
     font-size: large;
@@ -68,6 +80,12 @@
     border: none;
     appearance: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .review-select {
+        width: 40%;
+    }
 }
 
 .review-select:focus-visible {

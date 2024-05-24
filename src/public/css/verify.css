@@ -8,6 +8,12 @@
     padding: 2rem 2rem 3rem;
 }
 
+@media screen and (max-width: 768px) {
+    .main {
+        width: 70%;
+    }
+}
+
 .main-title__logo {
     font-size: x-large;
     font-weight: bold;

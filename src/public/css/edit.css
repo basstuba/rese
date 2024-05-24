@@ -25,6 +25,12 @@
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
 }
 
+@media screen and (max-width: 768px) {
+    .edit {
+        width: 70%;
+    }
+}
+
 .edit-title__logo {
     color: #fff;
     margin: 2rem;
