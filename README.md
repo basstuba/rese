@@ -176,7 +176,7 @@ crontab -e
 
 エディタが開いたら
 
-* * * * * cd /home/nutka/coachtech/laravel/rese/src && docker-compose exec php php artisan schedule:run >> /dev/null 2>&1
+&ast; &ast; &ast; &ast; &ast; cd /home/nutka/coachtech/laravel/rese/src && docker-compose exec php php artisan schedule:run >> /dev/null 2>&1
 
 を登録
 
@@ -202,7 +202,7 @@ crontab -e
 
 ・専用のアカウントでログインすることによってメニュー画面にログイン画面へのリンクが表示されます。
 
-![メニュー画面](Menu.phg)
+![メニュー画面](Menu.png)
 
 **専用アカウント**
 
