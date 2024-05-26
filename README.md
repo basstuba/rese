@@ -102,7 +102,7 @@ http://18.183.142.255
 
 ### 1 Gitファイルをクローンする
 
-git clone git@github.com:basstuba/atte.git
+git clone git@github.com:basstuba/rese.git
 
 ### 2 Dockerコンテナを作成する
 
