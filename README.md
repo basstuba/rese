@@ -16,7 +16,7 @@ http://localhost
 
 ### AWSを使用した本番環境
 
-http://{パブリックIPアドレス}
+http://18.183.142.255
 
 ## 機能一覧
 
@@ -176,9 +176,9 @@ crontab -e
 
 エディタが開いたら
 
-&ast; &ast; &ast; &ast; &ast; cd /home/nutka/coachtech/laravel/rese/src && docker-compose exec php php artisan schedule:run >> /dev/null 2>&1
+&ast; &ast; &ast; &ast; &ast; cd アプリケーションまでの絶対パス && docker-compose exec php php artisan schedule:run >> /dev/null 2>&1
 
-を登録
+を登録（例）&ast; &ast; &ast; &ast; &ast; cd /home/nutka/coachtech/laravel/rese/src && docker-compose exec php php artisan schedule:run >> /dev/null 2>&1
 
 ## 各種機能について
 
@@ -266,7 +266,7 @@ http://localhost:8025
 
 #### AWSを使用した本番環境
 
-http://{パブリックIPアドレス}:8025
+http://18.183.142.255:8025
 
 ### 2 データベースのテーブルを確認できるphpMyAdminのURLは下記の通りです。
 
@@ -276,11 +276,11 @@ http://localhost:8080
 
 #### AWSを使用した本番環境
 
-http://{パブリックIPアドレス}:8080
+http://18.183.142.255:8080
 
 ### 3 docker-compose.ymlの設定はlocalhostでの接続設定になっています。
 
-### 4 AWSの環境の確認はIAMユーザーを選択して”アカウントID“,”ユーザーネーム”,”パスワード”でログインしてください。
+### 4 AWSの環境の確認はIAMユーザーを選択して”アカウントID“ -> 471112662470,”ユーザーネーム” -> guest-user,”パスワード” -> G-user/4202でログインしてください。
 
 リージョンは東京を選択すれば確認できます。
 
