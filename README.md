@@ -16,7 +16,7 @@ http://localhost
 
 ### AWSを使用した本番環境
 
-http://52.69.211.195
+http://54.249.93.140
 
 ## 機能一覧
 
@@ -168,7 +168,13 @@ PHPコンテナにログインした状態で
 
 php artisan key:generate
 
-### 8 cronの設定
+### 8 シンボリックリンクの作成
+
+PHPコンテナにログインした状態で
+
+php artisan storage:link
+
+### 9 cronの設定
 
 phpコンテナに**ログインしていない**状態で
 
@@ -266,7 +272,7 @@ http://localhost:8025
 
 #### AWSを使用した本番環境
 
-http://52.69.211.195:8025
+http://54.249.93.140:8025
 
 ### 2 データベースのテーブルを確認できるphpMyAdminのURLは下記の通りです。
 
@@ -276,7 +282,7 @@ http://localhost:8080
 
 #### AWSを使用した本番環境
 
-http://52.69.211.195:8080
+http://54.249.93.140:8080
 
 ### 3 docker-compose.ymlの設定はlocalhostでの接続設定になっています。
 
