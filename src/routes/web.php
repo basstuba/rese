@@ -51,12 +51,12 @@ Route::middleware('verified')->group(function() {
     Route::post('/charge', [StripeController::class, 'charge'])->name('stripeCharge');
 });
 
-Route::prefix('admin')->middleware('auth:admin')->group(function() {
+Route::prefix('admin')->middleware('verified:admin')->group(function() {
     Route::get('/index', [AdminController::class, 'adminIndex']);
     Route::post('/create', [AdminController::class, 'adminCreate']);
 });
 
-Route::prefix('manager')->middleware('auth:manager')->group(function() {
+Route::prefix('manager')->middleware('verified:manager')->group(function() {
     Route::get('/index', [ManagerController::class, 'managerIndex'])->name('managerIndex');
     Route::get('/reservation/{store}', [ManagerController::class, 'managerReservation'])->name('managerReservation');
     Route::get('/new', [ManagerController::class, 'managerNew'])->name('managerNew');
@@ -68,4 +68,4 @@ Route::prefix('manager')->middleware('auth:manager')->group(function() {
     Route::post('/upload', [ManagerController::class, 'managerUpload']);
 });
 
-Route::post('/mail', [MailController::class, 'send'])->middleware('auth:manager');
+Route::post('/mail', [MailController::class, 'send'])->middleware('verified:manager');
