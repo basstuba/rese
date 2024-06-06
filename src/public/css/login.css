@@ -101,11 +101,15 @@
     color: #ff4c4c;
 }
 
+.form-button {
+    text-align: right;
+}
+
 .form-button__submit {
     background-color: #384fff;
     color: #fff;
     border-radius: 0.3rem;
     padding: 0.3rem 0.7rem;
     border: none;
-    margin-left: 16.5rem;
+    margin-right: 1.5rem;
 }

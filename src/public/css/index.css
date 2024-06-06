@@ -130,6 +130,12 @@
     align-items: center;
 }
 
+@media screen and (max-width: 1024px) {
+    .shop-detail {
+        margin-top: 0.5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .shop-detail {
         margin-top: 0.5rem;
@@ -144,6 +150,12 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 1024px) {
+    .shop-link__button {
+        padding: 0.2rem 0.5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .shop-link__button {
         padding: 0.2rem 0.5rem;
@@ -152,6 +164,12 @@
 
 .favorite {
     width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+    .favorite {
+        width: 20%;
+    }
 }
 
 .form-button {
@@ -164,4 +182,10 @@
 
 .heart {
     width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .heart {
+        width: 100%;
+    }
 }
