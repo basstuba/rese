@@ -44,18 +44,6 @@ class ShopController extends Controller
         return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow'));
     }
 
-    public function linkRegister() {
-        return view('auth.register');
-    }
-
-    public function linkLogin() {
-        return view('auth.login');
-    }
-
-    public function thanks() {
-        return view('thanks');
-    }
-
     public function linkUser() {
         $user = Auth::user();
         $reservations = Reservation::with('shop')->orderBy('date', 'asc')->orderBy('time', 'asc')->where('user_id', $user['id'])->get();

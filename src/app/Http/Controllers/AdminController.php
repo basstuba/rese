@@ -13,10 +13,6 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
-    public function multiIndex() {
-        return view('multi.multi-login');
-    }
-
     public function multiLogin(MultiLoginRequest $request) {
         $credentials = $request->only('email', 'password');
         $guard = $request->input('guard');
