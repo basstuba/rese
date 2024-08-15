@@ -27,18 +27,6 @@
     box-shadow: 0.1rem 0.1rem 0.3rem #979797;
 }
 
-@media screen and (max-width: 1024px) {
-    .main-content {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .main-content {
-        width: 70%;
-    }
-}
-
 .main-content__logo {
     background-color: #384fff;
     color: #fff;
@@ -127,4 +115,31 @@
     padding: 0.3rem 0.7rem;
     border: none;
     margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main {
+        padding: 1rem;
+    }
+    .main-content {
+        width: 100%;
+    }
 }

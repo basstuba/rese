@@ -22,23 +22,9 @@
     position: relative;
 }
 
-@media screen and (max-width: 768px) {
-    .main {
-        width: 100%;
-        display: contents;
-    }
-}
-
 .shop {
-    width: 40%;
+    width: 45%;
     margin-left: 2rem;
-}
-
-@media screen and (max-width: 768px) {
-    .shop {
-        width: 70%;
-        margin: 0 auto;
-    }
 }
 
 .shop-header {
@@ -153,12 +139,6 @@
     margin: 2rem auto;
 }
 
-@media screen and (max-width: 768px) {
-    .review-none {
-        font-size: larger;
-    }
-}
-
 .review-star {
     color: #ffa500;
     font-size: larger;
@@ -216,15 +196,6 @@
     top: -3rem;
     left: 0;
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
-}
-
-@media screen and (max-width: 768px) {
-    .reserved {
-        width: 70%;
-        margin: 1rem auto;
-        top: 0;
-        padding: 0.1rem;
-    }
 }
 
 .reserved-title__logo {
@@ -299,6 +270,7 @@
 }
 
 .reserved-td {
+    width: 80%;
     color: #fff;
     text-align: left;
     padding: 0.2rem;
@@ -320,12 +292,6 @@
     bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
-    .reserved-button {
-        position: relative;
-    }
-}
-
 .reserved-button__submit {
     width: 100%;
     color: #fff;
@@ -338,4 +304,105 @@
 
 .form-error {
     color: #ff4c4c;
+}
+
+@media screen and (max-width: 1024px) {
+    .shop {
+        width: 50%;
+        margin-left: 1rem;
+    }
+    .review-create__button,
+    .modal-review__button {
+        font-size: smaller;
+    }
+    .shop-tag {
+        width: 40%;
+    }
+    .reserved {
+        margin-right: 1rem;
+    }
+    .reserved-th {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+        display: contents;
+    }
+    .shop {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .review-none {
+        font-size: larger;
+    }
+    .reserved {
+        width: 70%;
+        margin: 1rem auto;
+        top: 0;
+        padding: 0.1rem;
+    }
+    .reserved-button {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .shop {
+        width: 85%;
+    }
+    .shop-header {
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+    }
+    .shop-tag {
+        width: 50%;
+    }
+    .reserved {
+        width: 85%;
+    }
+    .indicate-date__input {
+        width: 45%;
+    }
+    .reserved-content {
+        margin: 0 auto 6rem;
+    }
+    .reserved-th {
+        width: 25%;
+    }
+    .modal-review__page {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .review-create__button,
+    .modal-review__button {
+        font-size: medium;
+    }
+    .reserved-th {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .review-create__button,
+    .modal-review__button {
+        font-size: smaller;
+    }
+    .shop-tag {
+        width: 60%;
+    }
+    .indicate-date__input {
+        width: 55%;
+    }
+    .reserved-content {
+        width: 90%;
+        padding: 1.5rem 0.3rem;
+    }
+    .reserved-th {
+        white-space: nowrap;
+    }
 }

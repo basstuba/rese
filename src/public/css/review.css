@@ -37,12 +37,6 @@
     padding: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-    .main {
-        width: 90%;
-    }
-}
-
 .shop-name {
     font-size: xx-large;
     color: #fff;
@@ -66,12 +60,6 @@
     pointer-events: none;
 }
 
-@media screen and (max-width: 768px) {
-    .review-star::after {
-        right: 13rem;
-    }
-}
-
 .review-select {
     width: 35%;
     font-size: large;
@@ -82,17 +70,12 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .review-select {
-        width: 40%;
-    }
-}
-
 .review-select:focus-visible {
     outline: 0;
 }
 
 .review-comment__field {
+    width: 100%;
     border-radius: 0.3rem;
     font-size: large;
 }
@@ -113,4 +96,49 @@
 
 .form-error {
     color: #fd3c3c;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        width: 70%;
+    }
+    .review-star::after {
+        right: 13.7rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+    }
+    .review-star::after {
+        right: 13rem;
+    }
+    .review-select {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .review-select {
+        width: 80%;
+    }
+    .review-star::after {
+        right: 3rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .review-select {
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .review-select {
+        font-size: small;
+    }
+    .review-star::after {
+        right: 2rem;
+    }
 }

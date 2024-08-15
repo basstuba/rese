@@ -22,19 +22,13 @@
     align-content: center;
 }
 
-.menu-content {
+.menu-content__before {
     width: 30%;
     margin: 8rem auto;
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-    .menu-content {
-        width: 50%;
-    }
-}
-
-.menu-item {
+.menu-item__before {
     margin: 1rem;
 }
 
@@ -46,4 +40,16 @@
 
 .menu-item__link:visited {
     color: #384fff;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-content__before {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .menu-content__before {
+        width: 80%;
+    }
 }

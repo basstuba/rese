@@ -48,12 +48,6 @@
 
 }
 
-@media screen and (max-width: 768px) {
-    .reserved {
-        width: 45%;
-    }
-}
-
 .reserved-content {
     width: 100%;
     background-color: #384fff;
@@ -76,21 +70,9 @@
     align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    .reserved-count {
-        display: inline-block;
-    }
-}
-
 .reserved-icon {
     width: 8%;
     margin-right: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-    .reserved-icon {
-        width: 10%;
-    }
 }
 
 .icon-clock {
@@ -110,13 +92,6 @@
     padding: 0.3rem 0.5rem;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.1rem 0.3rem #000000;
-}
-
-@media screen and (max-width: 768px) {
-    .reserved-edit__button {
-        font-size: medium;
-        margin-left: 0rem;
-    }
 }
 
 .delete-button {
@@ -149,24 +124,12 @@
     font-size: larger;
 }
 
-@media screen and (max-width: 768px) {
-    .reserved-th {
-        width: 40%;
-    }
-}
-
 .reserved-td {
     font-size: larger;
 }
 
 .like {
     width: 57%;
-}
-
-@media screen and (max-width: 768px) {
-    .like {
-        width: 40%;
-    }
 }
 
 .favorite-content {
@@ -183,12 +146,6 @@
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
     background-color: #fff;
     margin: 0 2rem 1rem 0;
-}
-
-@media screen and (max-width: 768px) {
-    .shop {
-        width: 80%;
-    }
 }
 
 .shop-photo {
@@ -240,4 +197,107 @@
 
 .heart {
     width: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        padding: 0 2rem;
+    }
+    .reserved {
+        width: 45%;
+    }
+    .like {
+        width: 50%;
+    }
+    .shop {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reserved {
+        width: 45%;
+    }
+    .reserved-count {
+        flex-wrap: wrap;
+    }
+    .reserved-icon {
+        width: 10%;
+    }
+    .reserved-edit {
+        margin-top: 0.5rem;
+    }
+    .reserved-edit__button {
+        font-size: medium;
+        margin-left: 0rem;
+    }
+    .reserved-th {
+        width: 40%;
+    }
+    .like {
+        width: 40%;
+    }
+    .shop {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-header {
+        justify-content: space-between;
+    }
+    .stripe {
+        margin-left: 2rem;
+    }
+    .main-content {
+        flex-wrap: wrap;
+    }
+    .reserved {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .like {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .shop {
+        margin: 0 auto 1rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-header {
+        flex-wrap: wrap;
+    }
+    .stripe {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .user-name {
+        margin: 0.5rem auto;
+        text-align: center;
+    }
+    .reserved {
+        width: 90%;
+    }
+    .like {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main {
+        padding: 0 1rem;
+    }
+    .user-name {
+        width: 80%;
+        text-align: center;
+    }
+    .reserved {
+        width: 100%;
+    }
+    .like {
+        width: 100%;
+    }
 }

@@ -25,12 +25,6 @@
     box-shadow: 0.2rem 0.2rem 0.2rem #979797;
 }
 
-@media screen and (max-width: 768px) {
-    .edit {
-        width: 70%;
-    }
-}
-
 .edit-title__logo {
     color: #fff;
     margin: 2rem;
@@ -130,4 +124,43 @@
 
 .form-error {
     color: #ff4c4c;
+}
+
+@media screen and (max-width: 1024px) {
+    .edit {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .edit {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .edit {
+        width: 80%;
+    }
+    .indicate-date__input {
+        width: 50%;
+    }
+    .edit-th {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .edit-th {
+        white-space: nowrap;
+    }
+    .edit-value {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .indicate-date__input {
+        width: 60%;
+    }
 }

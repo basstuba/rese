@@ -73,3 +73,17 @@
         width: 60%;
     }
 }
+
+@media screen and (max-width: 426px) {
+    .header {
+        flex-wrap: wrap;
+    }
+    .header-content {
+        width: 70%;
+        justify-content: space-around;
+    }
+    .search-frame {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
