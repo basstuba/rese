@@ -30,12 +30,6 @@
     box-shadow: 0.1rem 0.1rem 0.3rem #979797;
 }
 
-@media screen and (max-width: 768px) {
-    .main-content {
-        width: 70%;
-    }
-}
-
 .content-text__message {
     font-weight: bold;
     font-size: larger;
@@ -52,4 +46,38 @@
     border-radius: 0.3rem;
     padding: 0.3rem 0.7rem;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-content {
+        width: 100%;
+        padding: 5rem 1rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .content-text__message {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main {
+        padding: 2rem 1rem;
+    }
+    .main-content {
+        padding: 5rem 0.5rem;
+    }
 }

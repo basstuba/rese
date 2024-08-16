@@ -26,3 +26,33 @@
     padding: 0.3rem 0.7rem;
     margin-right: 3rem;
 }
+
+@media screen and (max-width: 426px) {
+    .header {
+        flex-wrap: wrap;
+    }
+    .header-title {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .header-logo {
+        margin-left: 0;
+    }
+    .header-logout {
+        width: 100%;
+        text-align: end;
+    }
+    .logout-button {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .header-logo {
+        font-size: x-large;
+    }
+    .logout-button {
+        font-size: large;
+    }
+}

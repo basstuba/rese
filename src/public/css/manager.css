@@ -67,3 +67,49 @@
     font-size: xx-large;
     margin-top: 0.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+    .main {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        margin: 1rem auto;
+    }
+    .manager-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main {
+        width: 90%;
+    }
+    .manager-link,
+    .manager-link__dummy {
+        font-size: x-large;
+    }
+    .manager-content {
+        width: 100%;
+    }
+    .manager-content__input {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .manager-content__input {
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main {
+        padding: 3rem 1rem 1rem;
+    }
+    .manager-content__input {
+        font-size: small;
+    }
+}

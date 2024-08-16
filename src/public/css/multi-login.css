@@ -97,3 +97,40 @@
     padding: 0.3rem 0.7rem;
     border: none;
 }
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main-content {
+        width: 100%;
+    }
+    .form-item__select {
+        margin-left: 5.5rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .form-item__select {
+        margin-left: 3.5rem;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main {
+        padding: 2rem 1rem;
+    }
+    .form-item__select {
+        font-size: smaller;
+    }
+}

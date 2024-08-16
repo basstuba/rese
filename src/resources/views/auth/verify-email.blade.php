@@ -21,7 +21,7 @@
                 &emsp;
             </div>
             <div class="message">
-                メールをご確認ください。もし確認用メールが届いていない場合は、下記をクリックしてください。
+                メールをご確認ください。<br class="break">もし確認用メールが届いていない場合は、下記をクリックしてください。
             </div>
             <form class="message-form" action="/email/verification-notification" method="post">
                 @csrf

@@ -8,12 +8,6 @@
     padding: 2rem 2rem 3rem;
 }
 
-@media screen and (max-width: 768px) {
-    .main {
-        width: 70%;
-    }
-}
-
 .main-title__logo {
     font-size: x-large;
     font-weight: bold;
@@ -21,7 +15,7 @@
 }
 
 .main-content {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     border-radius: 0.3rem;
     background-color: #fff;
@@ -47,4 +41,54 @@
     padding: 0.5rem 1rem;
     font-size: large;
     cursor: pointer;
+}
+
+.break {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .main {
+        width: 90%;
+        padding: 2rem 1rem 3rem;
+    }
+    .main-content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-title__logo {
+        font-size: larger;
+    }
+    .message-again {
+        font-size: medium;
+    }
+    .message {
+        padding: 0 0.1rem;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .main-title__logo {
+        font-size: large;
+    }
+    .message-again {
+        font-size: smaller;
+    }
+    .break {
+        display: inline;
+    }
 }
