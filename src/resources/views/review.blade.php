@@ -40,7 +40,8 @@
             </div>
         </div>
         <div class="review-comment">
-            <textarea class="review-comment__field" name="review_comment" cols="70" rows="15" placeholder="コメントを記入してください"></textarea>
+            <textarea class="review-comment__field" name="review_comment" cols="70" rows="15"
+            placeholder={{ old('review_comment') ? '' : 'コメントを記入してください' }}>{{ old('review_comment') }}</textarea>
             <div class="form-error">
                 @error('review_comment')
                 {{ $message }}

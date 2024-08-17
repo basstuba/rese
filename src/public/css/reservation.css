@@ -102,3 +102,55 @@
     font-size: large;
     width: 45%;
 }
+
+@media screen and (max-width: 1024px) {
+    .reservation-main__content {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reservation-main__content {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .reservation-header {
+        flex-wrap: wrap;
+    }
+    .reservation-header__title {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .reservation-header__logo {
+        margin-left: 0;
+    }
+    .reservation-header__link {
+        width: 100%;
+        text-align: end;
+    }
+    .reservation-header__back {
+        margin-right: 1rem;
+    }
+    .reservation-notice {
+        flex-wrap: wrap;
+    }
+    .reservation-main__content {
+        width: 70%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .reservation-main__content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .reservation-main__content {
+        width: 90%;
+    }
+}

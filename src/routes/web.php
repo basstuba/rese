@@ -58,15 +58,16 @@ Route::middleware('verified')->group(function() {
     Route::get('/multi/index', function() {
         return view ('multi.multi-login');
     })->name('multiIndex');
+
     Route::post('/multi/login', [AdminController::class, 'multiLogin']);
 });
 
-Route::prefix('admin')->middleware('verified:admin')->group(function() {
+Route::prefix('admin')->middleware('auth:admin')->group(function() {
     Route::get('/index', [AdminController::class, 'adminIndex']);
     Route::post('/create', [AdminController::class, 'adminCreate']);
 });
 
-Route::prefix('manager')->middleware('verified:manager')->group(function() {
+Route::prefix('manager')->middleware('auth:manager')->group(function() {
     Route::get('/index', [ManagerController::class, 'managerIndex'])->name('managerIndex');
     Route::get('/reservation/{store}', [ManagerController::class, 'managerReservation'])->name('managerReservation');
     Route::post('/upload', [ManagerController::class, 'managerUpload']);
