@@ -30,6 +30,12 @@ class Shop extends Model
         return $this->hasOne('App\Models\Manager');
     }
 
+    public static function withUserFavorites($user) {
+        return self::with(['favorites' => function($query) use ($user) {
+            $query->where('user_id', $user->id);
+        }]);
+    }
+
     public function scopeAreaSearch($query, $area) {
         if(!empty($area)) {
             $query->where('area', $area);

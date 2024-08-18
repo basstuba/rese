@@ -73,41 +73,23 @@
                     <a class="shop-link__button" href="{{ route('detail', ['shop' => $shop['id']]) }}">詳しくみる</a>
                 </div>
                 <div class="favorite">
-                    @if($favorites->isEmpty())
+                    @if(!Auth::check() || $shop->favorites->isEmpty())
                         <form class="favorite-form" action="/favorite" method="post">
                             @csrf
-                            <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
                             <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
                             <button class="form-button" type="submit">
                                 <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
                             </button>
                         </form>
                     @else
-                        @php $isFavorite = false; @endphp
-                        @foreach($favorites as $favorite)
-                            @if($favorite['shop_id'] == $shop['id'])
-                            @php $isFavorite = true; @endphp
-                                <form class="favorite-form__delete" action="/favorite/delete" method="post">
-                                    @method('delete')
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $favorite['id'] }}"/>
-                                    <button class="form-button" type="submit">
-                                        <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
-                                    </button>
-                                </form>
-                            @break
-                            @endif
-                        @endforeach
-                        @if(!$isFavorite)
-                            <form class="favorite-form" action="/favorite" method="post">
-                                @csrf
-                                <input type="hidden" name="user_id" value="{{ $user['id'] }}"/>
-                                <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
-                                <button class="form-button" type="submit">
-                                    <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
-                                </button>
-                            </form>
-                        @endif
+                        <form class="favorite-form__delete" action="/favorite/delete" method="post">
+                            @method('delete')
+                            @csrf
+                            <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
+                            <button class="form-button" type="submit">
+                                <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
+                            </button>
+                        </form>
                     @endif
                 </div>
             </div>

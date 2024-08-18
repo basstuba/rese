@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Favorite;
 
 class LikeController extends Controller
 {
     public function likeCreate(Request $request) {
-        $favorite = $request->only('user_id', 'shop_id');
+        $user = Auth::user();
+        $favorite = $request->only('shop_id');
+        $favorite['user_id'] = $user->id;
 
         Favorite::create($favorite);
 
@@ -16,7 +19,8 @@ class LikeController extends Controller
     }
 
     public function likeDelete(Request $request) {
-        Favorite::find($request->id)->delete();
+        $user = Auth::user();
+        Favorite::where('shop_id', $request->shop_id)->where('user_id', $user->id)->delete();
 
         if($request->has('myPage')) {
             return redirect('/link/user');

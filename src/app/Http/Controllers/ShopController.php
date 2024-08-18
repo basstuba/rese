@@ -16,19 +16,24 @@ use Carbon\Carbon;
 
 class ShopController extends Controller
 {
-    public function index(Request $request) {
+    public function index() {
         $areas = Area::all();
         $genres = Genre::all();
 
-        $shops = session()->has('shops') ? session('shops') : Shop::all();
-        $user = Auth::check() ? Auth::user() : [ 'id' => 0 ] ;
-        $favorites = Favorite::where('user_id', $user['id'])->get();
+        $user = Auth::user();
+        $shops = session()->has('shops') ? session('shops') : (Auth::check() ? Shop::withUserFavorites($user)->get() : Shop::all());
 
-        return view('index', compact('areas', 'genres', 'shops', 'user', 'favorites'));
+        return view('index', compact('areas', 'genres', 'shops'));
     }
 
     public function search(Request $request) {
-        $shops = Shop::AreaSearch($request->area)->GenreSearch($request->genre)->KeywordSearch($request->keyword)->get();
+        $user = Auth::user();
+        $query = Auth::check() ? Shop::withUserFavorites($user) : Shop::query();
+
+        $shops = $query->AreaSearch($request->area)
+                    ->GenreSearch($request->genre)
+                    ->KeywordSearch($request->keyword)
+                    ->get();
 
         return redirect('/')->withInput()->with('shops', $shops);
     }
