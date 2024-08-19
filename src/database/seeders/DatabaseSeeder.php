@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Assessment;
 use App\Models\Reservation;
 use App\Models\Review;
 use App\Models\User;
@@ -30,5 +31,6 @@ class DatabaseSeeder extends Seeder
         User::factory(20)->create();
         Reservation::factory(200)->create();
         Review::factory(200)->create();
+        Assessment::factory(200)->create();
     }
 }

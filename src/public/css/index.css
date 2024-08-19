@@ -1,5 +1,18 @@
+.sort-select {
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: large;
+    appearance: none;
+}
+
+.sort-select:focus-visible {
+    outline: 0;
+}
+
 .header-search {
-    width: 100%;
+    width: 60%;
     background-color: #fff;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.1rem 0.1rem #979797;
@@ -170,6 +183,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .header-search {
+        width: 70%;
+        margin-left: 1rem;
+    }
     .shop-detail {
         margin-top: 0.5rem;
     }
@@ -182,6 +199,12 @@
 }
 
 @media screen and (max-width: 426px) {
+    .header-sort {
+        margin: 1rem auto;
+    }
+    .header-search {
+        width: 90%;
+    }
     .search-form {
         flex-wrap: wrap;
     }
@@ -192,6 +215,9 @@
     .search-select {
         width: 100%;
         border-right: none;
+    }
+    .search-text {
+        width: 70%;
     }
     .shop {
         width: 40%;

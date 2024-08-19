@@ -6,7 +6,19 @@
 <link rel="stylesheet" href="{{ asset('css/after-login.css') }}"/>
 @endsection
 
+
+
 @section('search')
+<div class="header-sort">
+    <form class="sort-form" action="/sort" method="get">
+        <select class="sort-select" name="sort" onchange="submit()">
+            <option value="" hidden>並べ替え&colon;評価高&sol;低</option>
+            <option value="1">ランダム</option>
+            <option value="2">評価が高い順</option>
+            <option value="3">評価が低い順</option>
+        </select>
+    </form>
+</div>
 <div class="header-search">
     <form class="search-form" action="/search" method="get">
         <div class="search-item">

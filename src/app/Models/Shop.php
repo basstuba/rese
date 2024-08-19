@@ -26,6 +26,10 @@ class Shop extends Model
         return $this->hasMany('App\Models\Favorite');
     }
 
+    public function assessments() {
+        return $this->hasMany('App\Models\Assessment');
+    }
+
     public function manager() {
         return $this->hasOne('App\Models\Manager');
     }

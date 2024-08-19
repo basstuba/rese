@@ -24,6 +24,7 @@ use App\Http\Controllers\StripeController;
 */
 
 Route::get('/', [ShopController::class, 'index'])->name('index');
+Route::get('/sort', [ShopController::class, 'sort']);
 Route::get('/search', [ShopController::class, 'search']);
 Route::get('/detail/{shop}', [ShopController::class, 'detail'])->name('detail');
 

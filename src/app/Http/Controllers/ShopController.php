@@ -25,6 +25,29 @@ class ShopController extends Controller
 
         return view('index', compact('areas', 'genres', 'shops'));
     }
+    /*まだ途中*/
+    public function sort(Request $request) {
+        $user = Auth::user();
+        $query = Auth::check() ? Shop::withUserFavorites($user) : Shop::query();
+
+        if($request->sort == "1") {
+            $shops = $query->inRandomOrder()->get();
+        }elseif($request->sort == "2") {
+            $shops = $query->with('assessments')
+                ->select('shops.*')
+                ->withSum('assessments', 'count')
+                ->orderBy('assessments_sum_count', 'desc')
+                ->get();
+        }else {
+            $shops = $query->with('assessments')
+                ->select('shops.*')
+                ->withSum('assessments', 'count')
+                ->orderByRaw('IF(assessments_sum_count = 0, 1, 0), assessments_sum_count ASC')
+                ->get();
+        }
+
+        return redirect('/')->with('shops', $shops);
+    }
 
     public function search(Request $request) {
         $user = Auth::user();

@@ -10,5 +10,8 @@ class Evaluation extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $fillable = ['star'];
+    protected $fillable = [
+        'star',
+        'count',
+    ];
 }

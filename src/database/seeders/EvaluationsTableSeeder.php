@@ -14,19 +14,34 @@ class EvaluationsTableSeeder extends Seeder
      */
     public function run()
     {
-        $param = [ 'star' => '★★★★★' ];
+        $param = [
+            'star' => '★★★★★',
+            'count' => 5
+        ];
         DB::table('evaluations')->insert($param);
 
-        $param = [ 'star' => '★★★★☆' ];
+        $param = [
+            'star' => '★★★★☆',
+            'count' => 4
+        ];
         DB::table('evaluations')->insert($param);
 
-        $param = [ 'star' => '★★★☆☆' ];
+        $param = [
+            'star' => '★★★☆☆',
+            'count' => 3
+        ];
         DB::table('evaluations')->insert($param);
 
-        $param = [ 'star' => '★★☆☆☆' ];
+        $param = [
+            'star' => '★★☆☆☆',
+            'count' => 2
+        ];
         DB::table('evaluations')->insert($param);
 
-        $param = [ 'star' => '★☆☆☆☆' ];
+        $param = [
+            'star' => '★☆☆☆☆',
+            'count' => 1
+        ];
         DB::table('evaluations')->insert($param);
     }
 }
