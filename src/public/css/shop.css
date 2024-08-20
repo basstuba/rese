@@ -23,8 +23,10 @@
 }
 
 .shop {
-    width: 45%;
+    width: 40%;
     margin-left: 2rem;
+    overflow-y: auto;
+    max-height: 35rem;
 }
 
 .shop-header {
@@ -183,6 +185,72 @@
 .shop-message {
     margin: 0.5rem 0 0 0;
     letter-spacing: 0.1rem;
+}
+
+.modal-assessment__open-button {
+    width: 100%;
+    color: #fff;
+    background-color: #678df4;
+    text-align: center;
+    border: none;
+    font-size: larger;
+    padding: 1rem 0;
+    margin: 2rem 0;
+}
+
+.modal-assessment__content {
+    width: 50%;
+    position: fixed;
+    top: -10%;
+    left: 47%;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0.3rem 0.3rem 0.2rem#7e7e7e;
+    padding: 0 1rem;
+}
+
+.modal-assessment__close {
+    text-align: end;
+}
+
+.modal-assessment__close-button {
+    color: #fff;
+    background-color: #678df4;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: larger;
+    padding: 0.2rem 0.5rem;
+    margin: 1rem 2rem;
+}
+
+.modal-assessment__main-content {
+    overflow-y: auto;
+    max-height: 30rem;
+}
+
+.modal-assessment__item-evaluate {
+    color: #384fff;
+    font-size: xx-large;
+}
+
+.modal-assessment__item-photo {
+    width: 40%;
+}
+
+.item-photo__img {
+    width: 100%;
+}
+
+.user-assessment__item-create {
+    margin: 0.5rem 0 2rem;
+}
+
+.item-create__link {
+    color: #000;
+}
+
+.item-create__link:visited {
+    color: #000;
 }
 
 .reserved {

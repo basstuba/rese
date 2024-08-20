@@ -12,6 +12,7 @@ use App\Models\Time;
 use App\Models\Number;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\Assessment;
 use Carbon\Carbon;
 
 class ShopController extends Controller
@@ -25,7 +26,7 @@ class ShopController extends Controller
 
         return view('index', compact('areas', 'genres', 'shops'));
     }
-    /*まだ途中*/
+
     public function sort(Request $request) {
         $user = Auth::user();
         $query = Auth::check() ? Shop::withUserFavorites($user) : Shop::query();
@@ -69,7 +70,11 @@ class ShopController extends Controller
         $numbers = Number::all();
         $tomorrow = Carbon::tomorrow()->format('Y-m-d');
 
-        return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow'));
+        $user = Auth::user();
+        $assessments = Assessment::orderBy('updated_at', 'desc')->where('shop_id', $shopId)->get();
+        $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shopId)->first();
+
+        return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow', 'assessments', 'userAssessment'));
     }
 
     public function linkUser() {

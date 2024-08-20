@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReseController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\NewShopController;
@@ -54,6 +55,14 @@ Route::middleware('verified')->group(function() {
     Route::get('/review/{shop}', [ReviewController::class, 'review'])->name('review');
     Route::post('/review/create', [ReviewController::class, 'reviewCreate']);
 
+    Route::prefix('assessment')->group(function() {
+        Route::get('/{shop}', [AssessmentController::class, 'assessment'])->name('assessment');
+        Route::post('/create', [AssessmentController::class, 'assessmentCreate']);
+        Route::get('/edit/{shop}', [AssessmentController::class, 'assessmentEdit'])->name('assessmentEdit');
+        Route::post('/update', [AssessmentController::class, 'assessmentUpdate']);
+        Route::delete('/delete', [AssessmentController::class, 'assessmentDelete']);
+    });
+
     Route::post('/charge', [StripeController::class, 'charge'])->name('stripeCharge');
 
     Route::get('/multi/index', function() {
@@ -65,7 +74,11 @@ Route::middleware('verified')->group(function() {
 
 Route::prefix('admin')->middleware('auth:admin')->group(function() {
     Route::get('/index', [AdminController::class, 'adminIndex']);
+    Route::get('/new/manager', [AdminController::class, 'adminNewManager'])->name('adminNewManager');
     Route::post('/create', [AdminController::class, 'adminCreate']);
+    Route::get('/shop/assessment', [AdminController::class, 'adminShopAssessment'])->name('adminShopAssessment');
+    Route::get('/assessment/{shop}', [AdminController::class, 'adminAssessment'])->name('adminAssessment');
+    Route::delete('/assessment/delete', [AdminController::class, 'adminAssessmentDelete']);
 });
 
 Route::prefix('manager')->middleware('auth:manager')->group(function() {

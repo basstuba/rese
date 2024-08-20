@@ -57,7 +57,7 @@
                             <p class="review-text__comment">{{ $review['review_comment'] }}</p>
                         </div>
                         <div class="review-date">
-                            {{ $review['posted_on']}}
+                            {{ $review['posted_on'] }}
                         </div>
                     @endforeach
                 @endif
@@ -79,6 +79,78 @@
                 {{ $shop['comment']}}
             </p>
         </div>
+        @if($assessments->isNotEmpty())
+        <div class="modal-assessment__open">
+            <button class="modal-assessment__open-button" popovertarget="Modal" popovertargetaction="show">全ての口コミ情報</button>
+        </div>
+        <div class="modal-assessment__content" id="Modal" popover="auto">
+            <div class="modal-assessment__close">
+                <button class="modal-assessment__close-button" popovertarget="Modal" popovertargetaction="hidden">閉じる</button>
+            </div>
+            <div class="modal-assessment__main-content">
+            @foreach($assessments as $assessment)
+                @if($assessment['user_id'] == Auth::user()->id)
+                    <div class="modal-assessment__user-item">
+                        <div class="user-item__link">
+                            <a class="user-item__link-button" href="{{ route('assessmentEdit', ['shop' => $shop['id']]) }}">口コミを編集</a>
+                        </div>
+                        <div class="user-item__delete">
+                            <form class="user-item__delete-form" action="/assessment/delete" method="post">
+                                @method('delete')
+                                @csrf
+                                <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
+                                <input type="hidden" name="assessmentId" value="{{ $assessment['id'] }}">
+                                <button class="user-item__delete-button" type="submit">口コミを削除</button>
+                            </form>
+                        </div>
+                    </div>
+                @endif
+                <div class="modal-assessment__item-evaluate">
+                    {{ $assessment['evaluate'] }}
+                </div>
+                <div class="modal-assessment__item-comment">
+                    {{ $assessment['assessment_comment']}}
+                </div>
+                @if(!empty($assessment['photo_url']))
+                    <div class="modal-assessment__item-photo">
+                        <img class="item-photo__img" src="{{ asset($assessment['photo_url']) }}" alt="口コミ画像">
+                    </div>
+                @endif
+            @endforeach
+            </div>
+        </div>
+        @endif
+        @if(!empty($userAssessment))
+            <div class="user-assessment__item-nav">
+                <div class="item-nav__update">
+                    <a class="item-nav__update-link" href="{{ route('assessmentEdit', ['shop' => $shop['id']]) }}">口コミを編集</a>
+                </div>
+                <div class="item-nav__delete">
+                    <form class="item-nav__delete-form" action="/assessment/delete" method="post">
+                        @method('delete')
+                        @csrf
+                        <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
+                        <input type="hidden" name="assessmentId" value="{{ $userAssessment['id'] }}">
+                        <button class="item-nav__delete-button" type="submit">口コミを削除</button>
+                    </form>
+                </div>
+            </div>
+            <div class="user-assessment__item-evaluate">
+                {{ $userAssessment['evaluate'] }}
+            </div>
+            <div class="user-assessment__item-comment">
+                {{ $userAssessment['assessment_comment']}}
+            </div>
+            @if(!empty($userAssessment['photo_url']))
+                <div class="user-assessment__item-photo">
+                    <img class="item-photo__img" src="{{ asset($userAssessment['photo_url']) }}" alt="口コミ画像">
+                </div>
+            @endif
+        @else
+            <div class="user-assessment__item-create">
+                <a class="item-create__link" href="{{ route('assessment', ['shop' => $shop['id']]) }}">口コミを投稿する</a>
+            </div>
+        @endif
     </div>
     <div class="reserved">
         <div class="reserved-title">
