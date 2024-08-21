@@ -46,8 +46,9 @@ class AssessmentController extends Controller
         $shop = Shop::find($shopId);
         $evaluations = Evaluation::all();
         $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shop['id'])->first();
+        $userEvaluation = Evaluation::where('count', $userAssessment['count'])->first();
 
-        return view('assessment.update', compact('shop', 'evaluations', 'userAssessment'));
+        return view('assessment.update', compact('shop', 'evaluations', 'userAssessment', 'userEvaluation'));
     }
 
     public function assessmentUpdate(AssessmentRequest $request) {

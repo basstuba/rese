@@ -90,20 +90,20 @@
             <div class="modal-assessment__main-content">
             @foreach($assessments as $assessment)
                 @if($assessment['user_id'] == Auth::user()->id)
-                    <div class="modal-assessment__user-item">
-                        <div class="user-item__link">
-                            <a class="user-item__link-button" href="{{ route('assessmentEdit', ['shop' => $shop['id']]) }}">口コミを編集</a>
-                        </div>
-                        <div class="user-item__delete">
-                            <form class="user-item__delete-form" action="/assessment/delete" method="post">
-                                @method('delete')
-                                @csrf
-                                <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
-                                <input type="hidden" name="assessmentId" value="{{ $assessment['id'] }}">
-                                <button class="user-item__delete-button" type="submit">口コミを削除</button>
-                            </form>
-                        </div>
+                <div class="modal-assessment__user-item">
+                    <div class="user-item__link">
+                        <a class="user-item__link-button" href="{{ route('assessmentEdit', ['shop' => $shop['id']]) }}">口コミを編集</a>
                     </div>
+                    <div class="user-item__delete">
+                        <form class="user-item__delete-form" action="/assessment/delete" method="post">
+                            @method('delete')
+                            @csrf
+                            <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
+                            <input type="hidden" name="assessmentId" value="{{ $assessment['id'] }}">
+                            <button class="user-item__delete-button" type="submit">口コミを削除</button>
+                        </form>
+                    </div>
+                </div>
                 @endif
                 <div class="modal-assessment__item-evaluate">
                     {{ $assessment['evaluate'] }}
@@ -112,15 +112,16 @@
                     {{ $assessment['assessment_comment']}}
                 </div>
                 @if(!empty($assessment['photo_url']))
-                    <div class="modal-assessment__item-photo">
-                        <img class="item-photo__img" src="{{ asset($assessment['photo_url']) }}" alt="口コミ画像">
-                    </div>
+                <div class="modal-assessment__item-photo">
+                    <img class="item-photo__img" src="{{ asset($assessment['photo_url']) }}" alt="口コミ画像">
+                </div>
                 @endif
             @endforeach
             </div>
         </div>
         @endif
         @if(!empty($userAssessment))
+        <div class="user-assessment">
             <div class="user-assessment__item-nav">
                 <div class="item-nav__update">
                     <a class="item-nav__update-link" href="{{ route('assessmentEdit', ['shop' => $shop['id']]) }}">口コミを編集</a>
@@ -146,6 +147,7 @@
                     <img class="item-photo__img" src="{{ asset($userAssessment['photo_url']) }}" alt="口コミ画像">
                 </div>
             @endif
+        </div>
         @else
             <div class="user-assessment__item-create">
                 <a class="item-create__link" href="{{ route('assessment', ['shop' => $shop['id']]) }}">口コミを投稿する</a>

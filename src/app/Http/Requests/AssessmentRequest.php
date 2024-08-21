@@ -24,18 +24,19 @@ class AssessmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'evaluate' => 'required',
+            'shop_id' => 'required',
+            'evaluation_id' => 'required',
             'assessment_comment' => 'required|max:400',
-            'photo_url' => 'mimes:jpeg,png|nullable',
+            'imagePhoto' => 'mimes:jpeg,png|nullable',
         ];
     }
 
     public function messages()
     {
         return [
-            'evaluate . required' => '星の数を入力してください',
-            'assessment_comment . required' => 'コメントを入力してください',
-            'photo_url . mimes' => 'jpeg画像又はpng画像を使用してください',
+            'evaluation_id.required' => '星の数を入力してください',
+            'assessment_comment.required' => 'コメントを入力してください',
+            'imagePhoto.mimes' => 'jpeg画像又はpng画像を使用してください',
         ];
     }
 }

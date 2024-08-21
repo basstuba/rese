@@ -206,7 +206,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and  (max-width: 768px) {
     .shop-display__item-message {
         font-size: x-large;
     }
@@ -252,7 +252,7 @@
     .evaluation-select,
     .comment-area,
     .comment-count,
-    .image-input {
+    .image-input{
         margin: 0.5rem auto 0;
     }
 
@@ -262,7 +262,7 @@
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 376px){
     .shop {
         width: 60%;
     }

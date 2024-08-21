@@ -139,7 +139,7 @@ return [
         'reservationId' => [
             'required' => 'お客様氏名を選択してください',
         ],
-        'photo_url' => [
+        'imagePhoto' => [
             'mimes' => 'jpeg画像又はpng画像を使用してください'
         ],
     ],
@@ -170,6 +170,7 @@ return [
         'img_url' => '画像',
         'guard' => '役職',
         'reservation' => 'お客様氏名',
+        'evaluation_id' => '星の数',
         'assessment_comment' => 'コメント',
     ],
 ];

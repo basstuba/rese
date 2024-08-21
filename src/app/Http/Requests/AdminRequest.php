@@ -33,11 +33,11 @@ class AdminRequest extends FormRequest
     public function messages()
     {
         return [
-            'name . required' => 'お名前を入力してください',
-            'email . required' => 'メールアドレスを入力してください',
-            'email . email' => 'メールアドレスは有効なメールアドレス形式で入力してください',
-            'email . unique' => 'このメールアドレスは既に使用されています',
-            'password . required' => 'パスワードを入力してください',
+            'name.required' => 'お名前を入力してください',
+            'email.required' => 'メールアドレスを入力してください',
+            'email.email' => 'メールアドレスは有効なメールアドレス形式で入力してください',
+            'email.unique' => 'このメールアドレスは既に使用されています',
+            'password.required' => 'パスワードを入力してください',
         ];
     }
 }

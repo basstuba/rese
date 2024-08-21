@@ -35,12 +35,12 @@ class ManagerRequest extends FormRequest
     public function messages()
     {
         return [
-            'name . required' => '店舗名を入力してください',
-            'area . required' => '地域を入力してください',
-            'genre . required' => 'ジャンルを入力してください',
-            'comment . required' => '店舗概要を入力してください',
-            'comment . max' => '店舗概要は250文字以下にしてください',
-            'img_url . required' => '画像を選択してください',
+            'name.required' => '店舗名を入力してください',
+            'area.required' => '地域を入力してください',
+            'genre.required' => 'ジャンルを入力してください',
+            'comment.required' => '店舗概要を入力してください',
+            'comment.max' => '店舗概要は250文字以下にしてください',
+            'img_url.required' => '画像を選択してください',
         ];
     }
 }

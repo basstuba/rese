@@ -31,7 +31,7 @@ class MailRequest extends FormRequest
     public function messages()
     {
         return[
-            'reservationId . required' => 'お客様氏名を選択してください'
+            'reservationId.required' => 'お客様氏名を選択してください'
         ];
     }
 }

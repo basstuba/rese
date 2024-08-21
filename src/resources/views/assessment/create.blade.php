@@ -12,10 +12,10 @@
 @endsection
 
 @section('content')
-<div>
-    <div>
-        <div>
-            <p>今回のご利用はいかがでしたか？</p>
+<div class="main">
+    <div class="shop-display">
+        <div class="shop-display__item">
+            <p class="shop-display__item-message">今回のご利用は<br>いかがでしたか？</p>
         </div>
         <div class="shop">
             <div class="shop-photo">
@@ -61,11 +61,12 @@
             </div>
         </div>
     </div>
-    <div>
-        <form action="/assessment/create" method="post" enctype="multipart/form-data">
-            <div>
-                <label>体験を評価してください</label>
-                <select name="evaluation_id">
+    <div class="assessment">
+        <form class="assessment-form" action="/assessment/create" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="assessment-evaluation">
+                <label class="assessment-title">体験を評価してください</label>
+                <select class="evaluation-select" name="evaluation_id">
                     @foreach($evaluations as $evaluation)
                     <option value="{{ $evaluation['id'] }}"
                     {{ old('evaluation_id') == $evaluation['id'] ? 'selected' : ''}}>
@@ -74,36 +75,40 @@
                     @endforeach
                 </select>
             </div>
-            <div>
+            <div class="error-message">
                 @error('evaluation_id')
                 {{ $message }}
                 @enderror
                 &emsp;
             </div>
-            <div>
-                <label>口コミを投稿</label>
-                <textarea name="assessment_comment">{{ old('assessment_comment') }}</textarea>
-                <p></p>
+            <div class="assessment-comment">
+                <label class="assessment-title">口コミを投稿</label>
+                <textarea class="comment-area" name="assessment_comment" cols="50" rows="8"
+                placeholder="{{ old('assessment_comment') ? '' : 'コメントをご記入ください' }}">{{ old('assessment_comment') }}</textarea>
+                <div class="comment-count">
+                    <p class="string-count">0</p>
+                    <p class="string-message">&sol;400&nbsp;&lpar;最高文字数&rpar;</p>
+                </div>
             </div>
-            <div>
+            <div class="error-message">
                 @error('assessment_comment')
                 {{ $message }}
                 @enderror
                 &emsp;
             </div>
-            <div>
-                <label>画像の追加</label>
-                <input type="file" name="imagePhoto" value="{{ old('imagePhoto') }}">
+            <div class="assessment-image">
+                <label class="assessment-title">画像の追加</label>
+                <input class="image-input" type="file" name="imagePhoto">
             </div>
-            <div>
+            <div class="error-message">
                 @error('imagePhoto')
                 {{ $message }}
                 @enderror
                 &emsp;
             </div>
-            <div>
+            <div class="assessment-button">
                 <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
-                <button type="submit">口コミを投稿</button>
+                <button class="button-submit" type="submit">口コミを投稿</button>
             </div>
         </form>
     </div>

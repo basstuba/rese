@@ -32,8 +32,8 @@ class ReviewRequest extends FormRequest
     public function messages()
     {
         return [
-            'evaluate . required' => '星の数を入力してください',
-            'review_comment . required' => 'コメントを入力してください'
+            'evaluate.required' => '星の数を入力してください',
+            'review_comment.required' => 'コメントを入力してください'
         ];
     }
 }
