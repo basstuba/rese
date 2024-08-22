@@ -1,110 +1,130 @@
-.admin-header {
+.main {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0.3rem 0.3rem 0.2rem #979797;
     text-align: center;
+    padding: 1rem;
+    margin: 1rem auto 2rem;
 }
 
-.admin-header__message {
-    font-size: xx-large;
+.shop-assessment {
+    margin-bottom: 1rem;
 }
 
-.admin-header__logo {
+.new-manager__link,
+.shop-assessment__link {
     color: #ffc266;
     font-size: xx-large;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.new-manager__link:visited,
+.shop-assessment__link:visited {
+    color: #ffc266;
 }
 
 .admin-content {
-    width: 40%;
-    text-align: center;
+    width: 70%;
+    padding: 0.5rem 0 2rem;
+    margin: 0 auto;
     background-color: #ffc266;
-    padding: 2rem;
-    margin: 0 auto;
     border-radius: 0.3rem;
-    box-shadow: 0.2rem 0.2rem 0.2rem #979797;
-}
-
-.admin-table {
-    margin: 0 auto;
-}
-
-.admin-th {
-    text-align: start;
-    font-size: larger;
-    font-weight: bold;
-    width: 30%;
-}
-
-.admin-td {
-    width: 60%;
 }
 
 .admin-content__input {
-    width: 100%;
+    display: block;
+    width: 80%;
+    background-color: #fff;
     font-size: large;
-    padding: 0.2rem;
-    border: none;
-    border-radius: 0.3rem;
+    padding: 4rem 3rem 0 7rem;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
 }
 
-.admin-content__input:focus-visible {
-    outline: 0;
+.admin-content__input::file-selector-button {
+    display: block;
+    opacity: 0;
 }
 
-.admin-content__select {
-    width: 100%;
-    font-size: large;
-    padding: 0.2rem;
-    border: none;
-    border-radius: 0.3rem;
+.admin-content__input::before {
+    display: block;
+    text-align: center;
+    position: absolute;
+    content: "クリックまたはドラッグアンドドロップ";
+    right: 2rem;
+    bottom: 3rem;
 }
 
-.admin-content__select:focus-visible {
-    outline: 0;
-}
-
-.admin-content__error {
-    color: #fd2626;
-}
-
-.admin-content__button-submit {
-    background-color: #ff9900;
-    color: #fff;
+.admin-content__submit {
+    width: 50%;
+    margin-top: 2rem;
+    padding: 0.3rem 0.7rem;
     font-size: larger;
-    padding: 0.3rem 1rem;
-    border-radius: 0.3rem;
+    background-color: #fff;
+    color: #ff9900;
     border: none;
+    border-radius: 0.3rem;
     box-shadow: 0.1rem 0.1rem 0.1rem #979797;
     cursor: pointer;
 }
 
+.admin-content__message {
+    font-size: xx-large;
+    margin-top: 0.5rem;
+}
+
 @media screen and (max-width: 1024px) {
-    .admin-content {
-        width: 50%;
+    .main {
+        width: 70%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .admin-content {
-        width: 70%;
+    .main {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 426px) {
     .admin-content {
-        width: 95%;
-        padding: 2rem 1rem;
+        width: 90%;
     }
-    .admin-th {
-        font-size: medium;
+
+    .admin-content__input {
+        font-size: smaller;
+        padding: 4rem 3rem 0 4rem;
+    }
+
+    .admin-content__input::before {
+        right: 0.5rem;
     }
 }
 
 @media screen and (max-width: 376px) {
-    .admin-th {
-        font-size: smaller;
+    .admin-content {
+        width: 100%;
+    }
+
+    .admin-content__input {
+        width: 90%;
+        font-size: small;
+    }
+
+    .admin-content__input::before {
+        right: 1rem;
     }
 }
 
 @media screen and (max-width: 321px) {
-    .admin-th {
+    .admin-content__logo {
+        font-size: larger;
+    }
+
+    .admin-content__input::before {
         font-size: x-small;
+        right: 1.5rem;
     }
 }

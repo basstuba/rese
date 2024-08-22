@@ -24,7 +24,7 @@ class ShopController extends Controller
         $user = Auth::user();
         $shops = session()->has('shops') ? session('shops') : (Auth::check() ? Shop::withUserFavorites($user)->get() : Shop::all());
 
-        return view('index', compact('areas', 'genres', 'shops'));
+        return view('index', compact('areas', 'genres', 'shops', 'user'));
     }
 
     public function sort(Request $request) {
@@ -40,10 +40,12 @@ class ShopController extends Controller
                 ->orderBy('assessments_sum_count', 'desc')
                 ->get();
         }else {
+            $orderClause = 'IF(assessments_sum_count IS NULL OR assessments_sum_count = 0, 1, 0), assessments_sum_count ASC';
+
             $shops = $query->with('assessments')
                 ->select('shops.*')
                 ->withSum('assessments', 'count')
-                ->orderByRaw('IF(assessments_sum_count = 0, 1, 0), assessments_sum_count ASC')
+                ->orderByRaw($orderClause)
                 ->get();
         }
 
@@ -72,9 +74,14 @@ class ShopController extends Controller
 
         $user = Auth::user();
         $assessments = Assessment::orderBy('updated_at', 'desc')->where('shop_id', $shopId)->get();
-        $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shopId)->first();
 
-        return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow', 'assessments', 'userAssessment'));
+        if(Auth::check()) {
+            $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shopId)->first();
+        }else{
+            $userAssessment = null;
+        }
+
+        return view('shop', compact('shop', 'reviews', 'times', 'numbers', 'tomorrow', 'assessments', 'userAssessment', 'user'));
     }
 
     public function linkUser() {

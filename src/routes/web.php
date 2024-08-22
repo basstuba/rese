@@ -73,7 +73,9 @@ Route::middleware('verified')->group(function() {
 });
 
 Route::prefix('admin')->middleware('auth:admin')->group(function() {
-    Route::get('/index', [AdminController::class, 'adminIndex']);
+    Route::get('/index', function() {
+        return view('admin.admin');
+    })->name('adminIndex');
     Route::get('/new/manager', [AdminController::class, 'adminNewManager'])->name('adminNewManager');
     Route::post('/create', [AdminController::class, 'adminCreate']);
     Route::get('/shop/assessment', [AdminController::class, 'adminShopAssessment'])->name('adminShopAssessment');

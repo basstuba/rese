@@ -1,0 +1,124 @@
+.assessment-header__link {
+    text-align: end;
+}
+
+.assessment-header__back {
+    text-decoration: none;
+    font-size: larger;
+    background-color: #ffc266;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #979797;
+    margin-right: 3rem;
+}
+
+.assessment-header__message {
+    font-size: x-large;
+    color: #fd2626;
+    text-align: center;
+}
+
+.assessment-header__title {
+    font-size: xx-large;
+    color: #ffc266;
+    text-align: center;
+}
+
+.assessment-content {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin: 2rem auto;
+}
+
+.assessment-content__item {
+    border-bottom: 0.1rem solid #ff9900;
+    padding: 0.5rem 0;
+}
+
+.assessment-content__delete {
+    text-align: end;
+}
+
+.delete-form__button {
+    background-color: #ffc266;
+    color: #fff;
+    font-size: large;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.assessment-content__evaluate {
+    color: #384fff;
+    font-size: x-large;
+    margin-bottom: 0.5rem;
+}
+
+.assessment-content__comment {
+    margin-bottom: 0.5rem;
+}
+
+.assessment-content__photo {
+    width: 30%;
+}
+
+.photo-image {
+    width: 100%;
+}
+
+.empty-message {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .assessment-content {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .assessment-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .assessment-header__link {
+        margin-top: 1rem;
+    }
+
+    .assessment-header__back {
+        margin-right: 1rem;
+    }
+
+    .assessment-header__message {
+        margin-top: 1rem;
+    }
+
+    .assessment-header__title {
+        font-size: x-large;
+    }
+
+    .assessment-content {
+        width: 80%;
+    }
+
+    .empty-message {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .assessment-content {
+        width: 90%;
+    }
+
+    .empty-message {
+        font-size: larger;
+    }
+}

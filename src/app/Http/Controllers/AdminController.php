@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Shop;
 use App\Models\Manager;
+use App\Models\Assessment;
 use Carbon\Carbon;
 
 class AdminController extends Controller
@@ -24,10 +25,10 @@ class AdminController extends Controller
         return back()->withErrors( ['auth' => ['認証に失敗しました']] );
     }
 
-    public function adminIndex() {
+    public function adminNewManager() {
         $shops = Shop::all();
 
-        return view('admin.admin', compact('shops'));
+        return view('admin.manager_create', compact('shops'));
     }
 
     public function adminCreate(AdminRequest $request) {
@@ -37,6 +38,25 @@ class AdminController extends Controller
 
         Manager::create($manager);
 
-        return redirect('/admin/index')->with('message', '登録完了しました');
+        return redirect('/admin/new/manager')->with('message', '登録完了しました');
+    }
+
+    public function adminShopAssessment() {
+        $shops = Shop::all();
+
+        return view('admin.shop_assessment', compact('shops'));
+    }
+
+    public function adminAssessment($shopId) {
+        $shop = Shop::find($shopId);
+        $assessments = Assessment::orderBy('updated_at', 'desc')->where('shop_id', $shopId)->get();
+
+        return view('admin.assessment', compact('shop', 'assessments'));
+    }
+
+    public function adminAssessmentDelete(Request $request) {
+        Assessment::find($request->assessment_id)->delete();
+
+        return redirect()->route('adminAssessment', ['shop' => $request->shop_id])->with('message', '削除しました');
     }
 }
