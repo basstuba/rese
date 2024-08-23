@@ -72,8 +72,16 @@
 }
 
 .admin-content__message {
-    font-size: xx-large;
     margin-top: 0.5rem;
+}
+
+.message-error {
+    font-size: larger;
+}
+
+.admin-content__space {
+    margin-top: 0.5rem;
+    font-size: x-large;
 }
 
 @media screen and (max-width: 1024px) {
@@ -101,6 +109,10 @@
     .admin-content__input::before {
         right: 0.5rem;
     }
+
+    .message-error {
+        font-size: smaller;
+    }
 }
 
 @media screen and (max-width: 376px) {
@@ -116,6 +128,14 @@
     .admin-content__input::before {
         right: 1rem;
     }
+
+    .admin-content__space {
+        font-size: larger;
+    }
+
+    .message-error {
+        font-size: small;
+    }
 }
 
 @media screen and (max-width: 321px) {
@@ -126,5 +146,9 @@
     .admin-content__input::before {
         font-size: x-small;
         right: 1.5rem;
+    }
+
+    .message-error {
+        font-size: x-small;
     }
 }

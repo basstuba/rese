@@ -17,10 +17,10 @@
             <h2 class="admin-content__logo">CSVファイルインポート</h2>
         </div>
         <div class="admin-content__main">
-            <form class="admin-content__form" action="" method="post" enctype="multipart/form-data">
+            <form class="admin-content__form" action="/admin/import" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="admin-content__item">
-                    <input class="admin-content__input" type="file" name="image">
+                    <input class="admin-content__input" type="file" name="file">
                 </div>
                 <div class="admin-content__button">
                     <button class="admin-content__submit" type="submit">インポート</button>
@@ -28,8 +28,16 @@
             </form>
         </div>
     </div>
+    @if($errors->any())
     <div class="admin-content__message">
+        @foreach($errors->all() as $error)
+        <p class="message-error">{{ $error }}</p>
+        @endforeach
+    </div>
+    @else
+    <div class="admin-content__space">
         {{ session('message') ?? '' }}&emsp;
     </div>
+    @endif
 </div>
 @endsection

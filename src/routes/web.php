@@ -7,6 +7,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\NewShopController;
 use App\Http\Controllers\EditShopController;
@@ -81,6 +82,8 @@ Route::prefix('admin')->middleware('auth:admin')->group(function() {
     Route::get('/shop/assessment', [AdminController::class, 'adminShopAssessment'])->name('adminShopAssessment');
     Route::get('/assessment/{shop}', [AdminController::class, 'adminAssessment'])->name('adminAssessment');
     Route::delete('/assessment/delete', [AdminController::class, 'adminAssessmentDelete']);
+
+    Route::post('/import', [ImportController::class, 'adminImport']);
 });
 
 Route::prefix('manager')->middleware('auth:manager')->group(function() {
