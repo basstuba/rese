@@ -124,9 +124,8 @@
                     </div>
                 </div>
                 <div class="create-shop__comment">
-                    <textarea class="create-shop__comment" name="comment" cols="33" rows="8" readonly>
-                        {{ old('shopComment') ?? $shop['comment'] }}
-                    </textarea>
+                    <textarea class="create-shop__comment" name="comment"
+                    cols="33" rows="8" readonly>{{ old('shopComment') ?? $shop['comment'] }}</textarea>
                 </div>
             </div>
             <div class="create-button">

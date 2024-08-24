@@ -135,6 +135,7 @@
 @media screen and (max-width: 768px) {
     .edit {
         width: 70%;
+        margin: 0 auto 2rem;
     }
 }
 
@@ -162,5 +163,9 @@
 @media screen and (max-width: 321px) {
     .indicate-date__input {
         width: 60%;
+    }
+
+    .edit-td {
+        font-size: small;
     }
 }

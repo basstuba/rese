@@ -125,7 +125,7 @@
                                 <form class="favorite-form__delete" action="/favorite/delete" method="post">
                                     @method('delete')
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ $favorite['id']}}"/>
+                                    <input type="hidden" name="shop_id" value="{{ $favorite['shop']['id']}}"/>
                                     <button class="form-button" type="submit" name="myPage">
                                         <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
                                     </button>

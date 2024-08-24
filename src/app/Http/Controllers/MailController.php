@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\MailRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NoticeMail;
-use App\Models\User;
 use App\Models\Reservation;
 use QrCode;
 

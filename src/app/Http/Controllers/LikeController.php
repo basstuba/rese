@@ -15,7 +15,13 @@ class LikeController extends Controller
 
         Favorite::create($favorite);
 
-        return redirect('/');
+        if($request->has('create')) {
+            return redirect()->route('assessment', ['shop' => $request->shop_id]);
+        }elseif($request->has('update')) {
+            return redirect()->route('assessmentEdit', ['shop' => $request->shop_id]);
+        }else{
+            return redirect('/');
+        }
     }
 
     public function likeDelete(Request $request) {
@@ -24,6 +30,10 @@ class LikeController extends Controller
 
         if($request->has('myPage')) {
             return redirect('/link/user');
+        }elseif($request->has('createPage')) {
+            return redirect()->route('assessment', ['shop' => $request->shop_id]);
+        }elseif($request->has('updatePage')) {
+            return redirect()->route('assessmentEdit', ['shop' => $request->shop_id]);
         }else{
             return redirect('/');
         }

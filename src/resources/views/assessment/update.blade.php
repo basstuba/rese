@@ -42,7 +42,7 @@
                             <form class="favorite-form" action="/favorite" method="post">
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
-                                <button class="form-button" type="submit">
+                                <button class="form-button" type="submit" name="update">
                                     <img class="heart" src="{{ asset('storage/image/icon_gray-heart.png') }}" alt="お気に入りボタン">
                                 </button>
                             </form>
@@ -51,7 +51,7 @@
                                 @method('delete')
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop['id'] }}"/>
-                                <button class="form-button" type="submit">
+                                <button class="form-button" type="submit" name="updatePage">
                                     <img class="heart" src="{{ asset('storage/image/icon_red-heart.png') }}" alt="お気に入りボタン">
                                 </button>
                             </form>
@@ -69,7 +69,7 @@
                 <select class="evaluation-select" name="evaluation_id">
                     @foreach($evaluations as $evaluation)
                     <option value="{{ $evaluation['id'] }}"
-                    {{ old('evaluation_id') || $userEvaluation['id'] == $evaluation['id'] ? 'selected' : ''}}>
+                    {{ (old('evaluation_id') ?? $userEvaluation['id']) == $evaluation['id'] ? 'selected' : ''}}>
                         {{ $evaluation['star'] }}
                     </option>
                     @endforeach

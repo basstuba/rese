@@ -481,6 +481,10 @@
         font-size: larger;
     }
 
+    .modal-assessment__content {
+        top: -5%;
+    }
+
     .reserved {
         width: 70%;
         margin: 1rem auto;
@@ -513,7 +517,7 @@
 
     .modal-assessment__content {
         width: 80%;
-        left: 20%;
+        left: 15%;
     }
 
     .reserved {
@@ -541,6 +545,10 @@
 
     .shop-tag {
         width: 70%;
+    }
+
+    .modal-assessment__close-button {
+        margin: 1rem;
     }
 
     .reserved-th {

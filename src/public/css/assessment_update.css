@@ -223,9 +223,14 @@
         right: 3.5rem;
     }
 
+    .assessment-button {
+        height: 5rem;
+    }
+
     .button-submit {
         width: 90%;
         right: 13rem;
+        margin-bottom: 1rem;
     }
 }
 

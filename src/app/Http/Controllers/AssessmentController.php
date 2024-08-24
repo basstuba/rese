@@ -12,7 +12,8 @@ use App\Models\Assessment;
 class AssessmentController extends Controller
 {
     public function assessment($shopId) {
-        $shop = Shop::find($shopId);
+        $user = Auth::user();
+        $shop = Shop::withUserFavorites($user)->find($shopId);
         $evaluations = Evaluation::all();
 
         return view('assessment.create', compact('shop', 'evaluations'));
@@ -43,7 +44,7 @@ class AssessmentController extends Controller
 
     public function assessmentEdit($shopId) {
         $user = Auth::user();
-        $shop = Shop::find($shopId);
+        $shop = Shop::withUserFavorites($user)->find($shopId);
         $evaluations = Evaluation::all();
         $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shop['id'])->first();
         $userEvaluation = Evaluation::where('count', $userAssessment['count'])->first();
