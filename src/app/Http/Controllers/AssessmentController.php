@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AssessmentRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
-use App\Models\Evaluation;
 use App\Models\Assessment;
 
 class AssessmentController extends Controller
@@ -14,18 +13,14 @@ class AssessmentController extends Controller
     public function assessment($shopId) {
         $user = Auth::user();
         $shop = Shop::withUserFavorites($user)->find($shopId);
-        $evaluations = Evaluation::all();
 
-        return view('assessment.create', compact('shop', 'evaluations'));
+        return view('assessment.create', compact('shop'));
     }
 
     public function assessmentCreate(AssessmentRequest $request) {
         $user = Auth::user();
-        $evaluation = Evaluation::find($request->evaluation_id);
-        $assessment = $request->only('shop_id', 'assessment_comment');
+        $assessment = $request->only('shop_id', 'count', 'assessment_comment');
         $assessment['user_id'] = $user['id'];
-        $assessment['evaluate'] = $evaluation['star'];
-        $assessment['count'] = $evaluation['count'];
 
         if(!empty($request->imagePhoto)) {
             $dir = 'image';
@@ -45,20 +40,15 @@ class AssessmentController extends Controller
     public function assessmentEdit($shopId) {
         $user = Auth::user();
         $shop = Shop::withUserFavorites($user)->find($shopId);
-        $evaluations = Evaluation::all();
         $userAssessment = Assessment::where('user_id', $user['id'])->where('shop_id', $shop['id'])->first();
-        $userEvaluation = Evaluation::where('count', $userAssessment['count'])->first();
 
-        return view('assessment.update', compact('shop', 'evaluations', 'userAssessment', 'userEvaluation'));
+        return view('assessment.update', compact('shop', 'userAssessment'));
     }
 
     public function assessmentUpdate(AssessmentRequest $request) {
         $user = Auth::user();
-        $evaluation = Evaluation::find($request->evaluation_id);
-        $assessment = $request->only('shop_id', 'assessment_comment');
+        $assessment = $request->only('shop_id', 'count', 'assessment_comment');
         $assessment['user_id'] = $user['id'];
-        $assessment['evaluate'] = $evaluation['star'];
-        $assessment['count'] = $evaluation['count'];
 
         if(!empty($request->imagePhoto)) {
             $dir = 'image';

@@ -64,19 +64,26 @@
     <div class="assessment">
         <form class="assessment-form" action="/assessment/update" method="post" enctype="multipart/form-data">
             @csrf
+            <div class="assessment-title">体験を評価してください</div>
             <div class="assessment-evaluation">
-                <label class="assessment-title">体験を評価してください</label>
-                <select class="evaluation-select" name="evaluation_id">
-                    @foreach($evaluations as $evaluation)
-                    <option value="{{ $evaluation['id'] }}"
-                    {{ (old('evaluation_id') ?? $userEvaluation['id']) == $evaluation['id'] ? 'selected' : ''}}>
-                        {{ $evaluation['star'] }}
-                    </option>
-                    @endforeach
-                </select>
+                <input class="assessment-input" id="star5" type="radio" name="count" value="5"
+                {{ (old('count') ?? $userAssessment['count']) == 5 ? 'checked' : ''}}>
+                <label class="assessment-star" for="star5">★</label>
+                <input class="assessment-input" id="star4" type="radio" name="count" value="4"
+                {{ (old('count') ?? $userAssessment['count']) == 4 ? 'checked' : ''}}>
+                <label class="assessment-star" for="star4">★</label>
+                <input class="assessment-input" id="star3" type="radio" name="count" value="3"
+                {{ (old('count') ?? $userAssessment['count']) == 3 ? 'checked' : ''}}>
+                <label class="assessment-star" for="star3">★</label>
+                <input class="assessment-input" id="star2" type="radio" name="count" value="2"
+                {{ (old('count') ?? $userAssessment['count']) == 2 ? 'checked' : ''}}>
+                <label class="assessment-star" for="star2">★</label>
+                <input class="assessment-input" id="star1" type="radio" name="count" value="1"
+                {{ (old('count') ?? $userAssessment['count']) == 1 ? 'checked' : ''}}>
+                <label class="assessment-star" for="star1">★</label>
             </div>
             <div class="error-message">
-                @error('evaluation_id')
+                @error('count')
                 {{ $message }}
                 @enderror
                 &emsp;

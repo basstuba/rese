@@ -17,7 +17,6 @@ class CreateAssessmentsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('shop_id')->constrained('shops')->onDelete('cascade');
-            $table->string('evaluate');
             $table->integer('count');
             $table->text('assessment_comment');
             $table->string('photo_url')->nullable();

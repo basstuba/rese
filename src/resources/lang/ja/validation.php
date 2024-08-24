@@ -170,7 +170,7 @@ return [
         'img_url' => '画像',
         'guard' => '役職',
         'reservation' => 'お客様氏名',
-        'evaluation_id' => '星の数',
+        'count' => '星の数',
         'assessment_comment' => 'コメント',
     ],
 ];

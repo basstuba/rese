@@ -106,7 +106,7 @@
                 </div>
                 @endif
                 <div class="modal-assessment__item-evaluate">
-                    {{ $assessment['evaluate'] }}
+                    <span class="item-count" data-rate="{{ $assessment['count'] }}"></span>
                 </div>
                 <div class="modal-assessment__item-comment">
                     {{ $assessment['assessment_comment']}}
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="user-assessment__item-evaluate">
-                    {{ $userAssessment['evaluate'] }}
+                    <span class="item-count" data-rate="{{ $userAssessment['count'] }}"></span>
                 </div>
                 <div class="user-assessment__item-comment">
                     {{ $userAssessment['assessment_comment']}}

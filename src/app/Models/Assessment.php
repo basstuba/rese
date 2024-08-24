@@ -13,7 +13,6 @@ class Assessment extends Model
     protected $fillable = [
         'user_id',
         'shop_id',
-        'evaluate',
         'count',
         'assessment_comment',
         'photo_url',

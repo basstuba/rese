@@ -31,7 +31,7 @@
                 </form>
             </div>
             <div class="assessment-content__evaluate">
-                {{ $assessment['evaluate'] }}
+                <span class="item-count" data-rate="{{ $assessment['count'] }}"></span>
             </div>
             <div class="assessment-content__comment">
                 {{ $assessment['assessment_comment'] }}

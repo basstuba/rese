@@ -103,15 +103,33 @@
     font-weight: bold;
 }
 
-.evaluation-select {
-    display: block;
-    font-size: xx-large;
-    color: #384fff;
-    background-color: #f5f5f5;
-    border: none;
-    appearance: none;
-    margin-top: 0.5rem;
+.assessment-evaluation {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.assessment-input {
+    display: none;
+}
+
+.assessment-star {
+    position: relative;
+    color: #adadad;
     cursor: pointer;
+    font-size: xx-large;
+}
+
+.assessment-star:hover {
+    color: #384fff;
+}
+
+.assessment-star:hover~.assessment-star {
+    color: #384fff;
+}
+
+.assessment-input:checked~.assessment-star {
+    color: #384fff;
 }
 
 .comment-area {
@@ -254,7 +272,10 @@
         text-align: center;
     }
 
-    .evaluation-select,
+    .assessment-evaluation {
+        justify-content: center;
+    }
+
     .comment-area,
     .comment-count,
     .image-input {
