@@ -103,7 +103,7 @@
                 @foreach($favorites as $favorite)
                 <div class="shop">
                     <div class="shop-photo">
-                        <img class="shop-img" src="{{ asset($favorite['shop']['img_url']) }}" alt="店舗写真">
+                        <img class="shop-img" src="{{ \App\Helpers\ImageHelper::imageUrl($favorite['shop']['img_url']) }}" alt="店舗写真">
                     </div>
                     <div class="shop-date">
                         <div class="shop-name">

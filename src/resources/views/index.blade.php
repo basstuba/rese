@@ -66,7 +66,7 @@
     @foreach($shops as $shop)
     <div class="shop">
         <div class="shop-photo">
-            <img class="shop-img" src="{{ asset($shop['img_url']) }}" alt="店舗写真">
+            <img class="shop-img" src="{{ \App\Helpers\ImageHelper::imageUrl($shop['img_url']) }}" alt="店舗写真">
         </div>
         <div class="shop-date">
             <div class="shop-name">
