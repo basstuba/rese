@@ -224,6 +224,12 @@
     }
 }
 
+@media screen and (max-width: 860px) {
+    .shop {
+        width: 60%;
+    }
+}
+
 @media screen and  (max-width: 768px) {
     .shop-display__item-message {
         font-size: x-large;
@@ -252,7 +258,7 @@
     }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 643px) {
     .main {
         flex-wrap: wrap;
     }
@@ -282,9 +288,27 @@
         margin: 0.5rem auto 0;
     }
 
+    .image-input {
+        padding: 6rem 4rem 0 10rem;
+    }
+
+    .image-input::before {
+        right: 8rem;
+    }
+
     .button-submit {
         position: static;
         margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .image-input {
+        padding: 6rem 4rem 0 5.5rem;
+    }
+
+    .image-input::before {
+        right: 5rem;
     }
 }
 
