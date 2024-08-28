@@ -16,7 +16,7 @@ class AssessmentFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(2, 11),
             'shop_id' => $this->faker->numberBetween(2, 20),
-            'count' => $this->faker->numberBetween(1, 5),
+            'count' => $this->faker->numberBetween(1, 3),
             'assessment_comment' => $this->faker->realText(50),
             'photo_url' => 'storage/image/hall.jpg',
         ];

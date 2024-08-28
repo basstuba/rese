@@ -31,6 +31,6 @@ class DatabaseSeeder extends Seeder
         User::factory(20)->create();
         Reservation::factory(200)->create();
         Review::factory(200)->create();
-        Assessment::factory(200)->create();
+        Assessment::factory(80)->create();
     }
 }
