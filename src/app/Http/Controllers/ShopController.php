@@ -36,15 +36,15 @@ class ShopController extends Controller
         }elseif($request->sort == "2") {
             $shops = $query->with('assessments')
                 ->select('shops.*')
-                ->withSum('assessments', 'count')
-                ->orderBy('assessments_sum_count', 'desc')
+                ->withAvg('assessments', 'count')
+                ->orderBy('assessments_avg_count', 'desc')
                 ->get();
         }else {
-            $orderClause = 'IF(assessments_sum_count IS NULL OR assessments_sum_count = 0, 1, 0), assessments_sum_count ASC';
+            $orderClause = 'IF(assessments_avg_count IS NULL OR assessments_avg_count = 0, 1, 0), assessments_avg_count ASC';
 
             $shops = $query->with('assessments')
                 ->select('shops.*')
-                ->withSum('assessments', 'count')
+                ->withAvg('assessments', 'count')
                 ->orderByRaw($orderClause)
                 ->get();
         }
